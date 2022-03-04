@@ -28,10 +28,10 @@ class MyApp extends StatelessWidget {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Container(
-                    padding: EdgeInsets.all(18),
+                    padding: EdgeInsets.all(12),
                     height: 150,
                     width: 150,
-                    color: Colors.amberAccent,
+                    color: Colors.blueAccent,
                     child: Stack(
                       children: [
                         Align(
@@ -48,25 +48,25 @@ class MyApp extends StatelessWidget {
                         ),
                         Align(
                           alignment: Alignment.bottomRight,
-                          child: Text('2019'),
+                          child: Text('2020'),
                         )
                       ],
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.all(18),
+                    padding: EdgeInsets.all(12),
                     height: 150,
                     width: 150,
-                    color: Colors.amberAccent,
+                    color: Colors.greenAccent,
                     child: Stack(
                       children: [
                         Align(
                           alignment: Alignment.topLeft,
-                          child: Icon(Icons.people),
+                          child: Icon(Icons.map),
                         ),
                         Align(
                           alignment: Alignment.centerLeft,
-                          child: Text('Jumlah Penduduk Kota Cirebon'),
+                          child: Text('Luas Daerah (km2)'),
                         ),
                         Align(
                           alignment: Alignment.centerRight,
