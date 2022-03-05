@@ -36,14 +36,16 @@ class MyApp extends StatelessWidget {
                       children: [
                         Align(
                           alignment: Alignment.topLeft,
-                          child: Icon(Icons.people),
+                          child: Icon(Icons.people, color: Colors.white,),
                         ),
                         Align(
                           alignment: Alignment.centerLeft,
                           child: Text('Jumlah Penduduk Kota Cirebon'),
                         ),
-                        Align(
-                          alignment: Alignment.centerRight,
+                        Positioned(
+                          bottom: 25,
+                          right: 0,
+                          // alignment: Alignment.centerRight,
                           child: Text('21,170'),
                         ),
                         Align(
@@ -62,14 +64,16 @@ class MyApp extends StatelessWidget {
                       children: [
                         Align(
                           alignment: Alignment.topLeft,
-                          child: Icon(Icons.map),
+                          child: Icon(Icons.map, color: Colors.white),
                         ),
                         Align(
                           alignment: Alignment.centerLeft,
                           child: Text('Luas Daerah (km2)'),
                         ),
-                        Align(
-                          alignment: Alignment.centerRight,
+                        Positioned(
+                          bottom: 25,
+                          right: 0,
+                          // alignment: Alignment.centerRight,
                           child: Text('21,170'),
                         ),
                         Align(
