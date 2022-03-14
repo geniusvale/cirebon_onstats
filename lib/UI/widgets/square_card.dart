@@ -14,31 +14,44 @@ class SquareCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.blueAccent,
           borderRadius: BorderRadius.circular(5),
-        ),  
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               children: [
-                Icon(Icons.people, color: Colors.white,),
+                Icon(
+                  Icons.people,
+                  color: Colors.white,
+                ),
               ],
             ),
             Row(
               children: [
-                Expanded(child: Text('Jumlah Penduduk Kota Cirebon', style: TextStyle(color: Colors.white),)),
+                Expanded(
+                    child: Text(
+                  'Jumlah Penduduk Kota Cirebon',
+                  style: TextStyle(color: Colors.white),
+                )),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text('21,170', style: TextStyle(color: Colors.white),),
+                Text(
+                  '21,170',
+                  style: TextStyle(color: Colors.white),
+                ),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Text('2020', style: TextStyle(color: Colors.white),),
+                Text(
+                  '2020',
+                  style: TextStyle(color: Colors.white),
+                ),
               ],
             ),
           ],
