@@ -12,7 +12,7 @@ class SquareCard extends StatelessWidget {
         height: 150,
         width: 150,
         decoration: BoxDecoration(
-          color: Colors.blueAccent,
+          color: Color(0xFF128EDB),
           borderRadius: BorderRadius.circular(5),
         ),
         child: Column(

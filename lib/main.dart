@@ -1,7 +1,7 @@
 import 'package:cirebon_onstats/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'UI/pages/homepage.dart';
+import 'UI/pages/pages.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
