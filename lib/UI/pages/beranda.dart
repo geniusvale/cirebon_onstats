@@ -2,6 +2,7 @@ import 'package:cirebon_onstats/UI/widgets/carousel_hero.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../widgets/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Beranda extends StatefulWidget {
   const Beranda({Key? key}) : super(key: key);

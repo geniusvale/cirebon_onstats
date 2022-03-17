@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ImageCard extends StatelessWidget {
   final Color warnaKiri, warnaKanan;
 
-  const ImageCard({Key? key, required this.warnaKiri, required this.warnaKanan}) : super(key: key);
+  const ImageCard({Key? key, required this.warnaKiri, required this.warnaKanan})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,11 @@ class ImageCard extends StatelessWidget {
         children: [
           Image.network('https://picsum.photos/200'),
           Text('Sosial dan Kependudukan',
-              style: TextStyle(color: Colors.white)),
+              style: GoogleFonts.poppins(
+                  textStyle: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14))),
         ],
       ),
     );

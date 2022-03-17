@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SquareCard extends StatelessWidget {
   final IconData iconLogo;
@@ -51,7 +52,7 @@ class SquareCard extends StatelessWidget {
               children: [
                 Text(
                   '$nilai',
-                  style: TextStyle(color: Colors.white),
+                  style: GoogleFonts.poppins(textStyle: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 24)),
                 ),
               ],
             ),
