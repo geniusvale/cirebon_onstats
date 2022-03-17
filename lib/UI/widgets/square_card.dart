@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
 
 class SquareCard extends StatelessWidget {
-  const SquareCard({
-    Key? key,
-  }) : super(key: key);
+  final IconData iconLogo;
+  final String title;
+  final String nilai;
+  final int tahun;
+  final Color warna;
+
+  SquareCard(
+      {Key? key,
+      required this.title,
+      required this.nilai,
+      required this.tahun,
+      required this.warna,
+      required this.iconLogo})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +23,7 @@ class SquareCard extends StatelessWidget {
         height: 150,
         width: 150,
         decoration: BoxDecoration(
-          color: Color(0xFF128EDB),
+          color: warna,
           borderRadius: BorderRadius.circular(5),
         ),
         child: Column(
@@ -21,7 +32,7 @@ class SquareCard extends StatelessWidget {
             Row(
               children: [
                 Icon(
-                  Icons.people,
+                  iconLogo,
                   color: Colors.white,
                 ),
               ],
@@ -30,7 +41,7 @@ class SquareCard extends StatelessWidget {
               children: [
                 Expanded(
                     child: Text(
-                  'Jumlah Penduduk Kota Cirebon',
+                  '$title',
                   style: TextStyle(color: Colors.white),
                 )),
               ],
@@ -39,7 +50,7 @@ class SquareCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
-                  '21,170',
+                  '$nilai',
                   style: TextStyle(color: Colors.white),
                 ),
               ],
@@ -49,7 +60,7 @@ class SquareCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(
-                  '2020',
+                  '$tahun',
                   style: TextStyle(color: Colors.white),
                 ),
               ],

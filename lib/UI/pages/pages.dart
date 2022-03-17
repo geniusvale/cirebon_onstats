@@ -1,2 +1,2 @@
 import 'package:flutter/material.dart';
-export './homepage.dart';
+export 'beranda.dart';

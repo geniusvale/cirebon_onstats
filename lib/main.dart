@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Cirebon OnStats',
-      home: Homepage(),
+      home: Beranda(),
     );
   }
 }
