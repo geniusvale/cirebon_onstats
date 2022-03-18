@@ -26,12 +26,23 @@ class _BerandaState extends State<Beranda> {
         ),
         body: SafeArea(
             child: SingleChildScrollView(
-              child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
               SizedBox(height: 25),
               CarouselHero(),
               SizedBox(height: 25),
+              Container(
+                width: double.infinity,
+                margin: EdgeInsets.symmetric(horizontal: 20),
+                child: Text('Beranda',
+                    style: GoogleFonts.poppins(
+                        textStyle: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18))),
+              ),
+              SizedBox(height: 8),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 mainAxisSize: MainAxisSize.max,
@@ -53,6 +64,17 @@ class _BerandaState extends State<Beranda> {
                 ],
               ),
               SizedBox(height: 25),
+              Container(
+                width: double.infinity,
+                margin: EdgeInsets.symmetric(horizontal: 20),
+                child: Text('Tabel Statistik Publik',
+                    style: GoogleFonts.poppins(
+                        textStyle: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18))),
+              ),
+              SizedBox(height: 8),
               ImageCard(
                 warnaKiri: Color(0xFF128EDB),
                 warnaKanan: Color(0xFF043277),
@@ -67,8 +89,8 @@ class _BerandaState extends State<Beranda> {
                 warnaKiri: Color(0xFF00CC83),
                 warnaKanan: Color(0xFF00A66A),
               ),
-                      ],
-                    ),
-            )));
+            ],
+          ),
+        )));
   }
 }
