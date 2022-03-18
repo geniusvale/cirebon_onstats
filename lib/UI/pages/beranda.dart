@@ -15,34 +15,34 @@ class _BerandaState extends State<Beranda> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: DrawerKu(),
+        drawer: const DrawerKu(),
         appBar: AppBar(
-          systemOverlayStyle: SystemUiOverlayStyle(
+          systemOverlayStyle: const SystemUiOverlayStyle(
             statusBarColor: Color(0xFF043277),
           ),
           backgroundColor: Color(0xFF043277),
           centerTitle: true,
-          title: Image.asset('assets/images/appbar-logo.png'),
+          title: Container(width: 130, height: 36, child: Image.asset('assets/images/appbar-logo.png')),
         ),
         body: SafeArea(
             child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              SizedBox(height: 25),
-              CarouselHero(),
-              SizedBox(height: 25),
+              const SizedBox(height: 25),
+              const CarouselHero(),
+              const SizedBox(height: 25),
               Container(
                 width: double.infinity,
-                margin: EdgeInsets.symmetric(horizontal: 20),
+                margin: const EdgeInsets.symmetric(horizontal: 20),
                 child: Text('Beranda',
                     style: GoogleFonts.poppins(
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
                             fontSize: 18))),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 mainAxisSize: MainAxisSize.max,
@@ -63,28 +63,28 @@ class _BerandaState extends State<Beranda> {
                   ),
                 ],
               ),
-              SizedBox(height: 25),
+              const SizedBox(height: 25),
               Container(
                 width: double.infinity,
-                margin: EdgeInsets.symmetric(horizontal: 20),
+                margin: const EdgeInsets.symmetric(horizontal: 20),
                 child: Text('Tabel Statistik Publik',
                     style: GoogleFonts.poppins(
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
                             fontSize: 18))),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               ImageCard(
                 warnaKiri: Color(0xFF128EDB),
                 warnaKanan: Color(0xFF043277),
               ),
-              SizedBox(height: 25),
+              const SizedBox(height: 25),
               ImageCard(
                 warnaKiri: Color(0xFFEC8611),
                 warnaKanan: Color(0xFFDC7418),
               ),
-              SizedBox(height: 25),
+              const SizedBox(height: 25),
               ImageCard(
                 warnaKiri: Color(0xFF00CC83),
                 warnaKanan: Color(0xFF00A66A),

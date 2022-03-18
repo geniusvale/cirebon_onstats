@@ -5,7 +5,7 @@ class DrawerKu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Drawer(
+    return const Drawer(
       backgroundColor: Color(0xFF043277),
     );
   }

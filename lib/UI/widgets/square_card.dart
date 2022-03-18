@@ -8,7 +8,7 @@ class SquareCard extends StatelessWidget {
   final int tahun;
   final Color warna;
 
-  SquareCard(
+  const SquareCard(
       {Key? key,
       required this.title,
       required this.nilai,
@@ -20,7 +20,7 @@ class SquareCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.all(12),
+        padding: const EdgeInsets.all(12),
         height: 150,
         width: 150,
         decoration: BoxDecoration(
@@ -42,8 +42,8 @@ class SquareCard extends StatelessWidget {
               children: [
                 Expanded(
                     child: Text(
-                  '$title',
-                  style: TextStyle(color: Colors.white),
+                  title,
+                  style: const TextStyle(color: Colors.white),
                 )),
               ],
             ),
@@ -51,8 +51,8 @@ class SquareCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
-                  '$nilai',
-                  style: GoogleFonts.poppins(textStyle: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 24)),
+                  nilai,
+                  style: GoogleFonts.poppins(textStyle: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 24)),
                 ),
               ],
             ),
@@ -61,8 +61,8 @@ class SquareCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(
-                  '$tahun',
-                  style: TextStyle(color: Colors.white),
+                  tahun.toString(),
+                  style: const TextStyle(color: Colors.white),
                 ),
               ],
             ),

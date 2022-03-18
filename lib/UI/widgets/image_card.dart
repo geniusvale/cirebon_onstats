@@ -12,7 +12,7 @@ class ImageCard extends StatelessWidget {
     return Container(
       width: 312,
       height: 80,
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5),
         gradient: LinearGradient(
@@ -27,7 +27,7 @@ class ImageCard extends StatelessWidget {
           // Image.asset('assets/images/berita-hero.png'),
           Text('Sosial dan Kependudukan',
               style: GoogleFonts.poppins(
-                  textStyle: TextStyle(
+                  textStyle: const TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 14))),
