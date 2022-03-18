@@ -24,7 +24,7 @@ class ImageCard extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Image.network('https://picsum.photos/200'),
+          // Image.asset('assets/images/berita-hero.png'),
           Text('Sosial dan Kependudukan',
               style: GoogleFonts.poppins(
                   textStyle: TextStyle(

@@ -22,46 +22,53 @@ class _BerandaState extends State<Beranda> {
           ),
           backgroundColor: Color(0xFF043277),
           centerTitle: true,
-          title: Text('Cirebon OnStats'),
+          title: Image.asset('assets/images/appbar-logo.png'),
         ),
         body: SafeArea(
-            child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            SizedBox(height: 25),
-            CarouselHero(),
-            SizedBox(height: 25),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                SquareCard(
-                  iconLogo: Icons.people,
-                  warna: Colors.lightBlue,
-                  title: 'Jumlah Penduduk Kota Cirebon',
-                  nilai: '12,000',
-                  tahun: 2020,
-                ),
-                SquareCard(
-                  iconLogo: Icons.map,
-                  warna: Colors.orange,
-                  title: 'Luas Wilayah (km2)',
-                  nilai: '130',
-                  tahun: 2013,
-                ),
-              ],
-            ),
-            SizedBox(height: 25),
-            ImageCard(
-              warnaKiri: Colors.yellow,
-              warnaKanan: Colors.green,
-            ),
-            SizedBox(height: 25),
-            ImageCard(
-              warnaKiri: Colors.blueAccent,
-              warnaKanan: Colors.amberAccent,
-            ),
-          ],
-        )));
+            child: SingleChildScrollView(
+              child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+              SizedBox(height: 25),
+              CarouselHero(),
+              SizedBox(height: 25),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  SquareCard(
+                    iconLogo: Icons.people,
+                    warna: Color(0xFF128EDB),
+                    title: 'Jumlah Penduduk Kota Cirebon',
+                    nilai: '21,170',
+                    tahun: 2020,
+                  ),
+                  SquareCard(
+                    iconLogo: Icons.map,
+                    warna: Color(0xFF00CC83),
+                    title: 'Luas Wilayah (km2)',
+                    nilai: '37,36',
+                    tahun: 2019,
+                  ),
+                ],
+              ),
+              SizedBox(height: 25),
+              ImageCard(
+                warnaKiri: Color(0xFF128EDB),
+                warnaKanan: Color(0xFF043277),
+              ),
+              SizedBox(height: 25),
+              ImageCard(
+                warnaKiri: Color(0xFFEC8611),
+                warnaKanan: Color(0xFFDC7418),
+              ),
+              SizedBox(height: 25),
+              ImageCard(
+                warnaKiri: Color(0xFF00CC83),
+                warnaKanan: Color(0xFF00A66A),
+              ),
+                      ],
+                    ),
+            )));
   }
 }

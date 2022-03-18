@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bps.cirebon_onstats">
    <application
-        android:label="cirebon_onstats"
+        android:label="Cirebon OnStats"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
