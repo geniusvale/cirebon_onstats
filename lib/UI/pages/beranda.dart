@@ -37,13 +37,13 @@ class _BerandaState extends State<Beranda> {
               const SizedBox(height: 25),
               Container(
                 width: double.infinity,
-                margin: const EdgeInsets.symmetric(horizontal: 20),
+                margin: const EdgeInsets.symmetric(horizontal: 40),
                 child: Text('Beranda',
-                    style: GoogleFonts.poppins(
-                        textStyle: const TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18))),
+                    style: TextStyle(
+                        fontFamily: 'Poppins',
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18)),
               ),
               const SizedBox(height: 8),
               Row(
@@ -69,7 +69,7 @@ class _BerandaState extends State<Beranda> {
               const SizedBox(height: 25),
               Container(
                 width: double.infinity,
-                margin: const EdgeInsets.symmetric(horizontal: 20),
+                margin: const EdgeInsets.symmetric(horizontal: 40),
                 child: Text('Tabel Statistik Publik',
                     style: GoogleFonts.poppins(
                         textStyle: const TextStyle(
