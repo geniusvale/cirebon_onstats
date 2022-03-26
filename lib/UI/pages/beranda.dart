@@ -38,7 +38,7 @@ class _BerandaState extends State<Beranda> {
               Container(
                 width: double.infinity,
                 margin: const EdgeInsets.symmetric(horizontal: 40),
-                child: Text('Beranda',
+                child: const Text('Beranda',
                     style: TextStyle(
                         fontFamily: 'Poppins',
                         color: Colors.black,
