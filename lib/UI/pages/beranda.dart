@@ -22,7 +22,10 @@ class _BerandaState extends State<Beranda> {
           ),
           backgroundColor: Color(0xFF043277),
           centerTitle: true,
-          title: Container(width: 130, height: 36, child: Image.asset('assets/images/appbar-logo.png')),
+          title: Container(
+              width: 130,
+              height: 36,
+              child: Image.asset('assets/images/appbar-logo.png')),
         ),
         body: SafeArea(
             child: SingleChildScrollView(
@@ -76,16 +79,22 @@ class _BerandaState extends State<Beranda> {
               ),
               const SizedBox(height: 8),
               ImageCard(
+                title: 'Sosial dan Kependudukan',
+                logo: 'assets/images/sosduk-logo.png',
                 warnaKiri: Color(0xFF128EDB),
                 warnaKanan: Color(0xFF043277),
               ),
               const SizedBox(height: 25),
               ImageCard(
+                title: 'Ekonomi dan Perdagangan',
+                logo: 'assets/images/ekoper-logo.png',
                 warnaKiri: Color(0xFFEC8611),
                 warnaKanan: Color(0xFFDC7418),
               ),
               const SizedBox(height: 25),
               ImageCard(
+                title: 'Pertanian dan Pertambangan',
+                logo: 'assets/images/pertani-logo.png',
                 warnaKiri: Color(0xFF00CC83),
                 warnaKanan: Color(0xFF00A66A),
               ),

@@ -11,24 +11,12 @@ class CarouselHero extends StatelessWidget {
         height: 130.0,
         autoPlay: true,
       ),
-      items: [1, 2, 3, 4, 5].map((i) {
-        return Builder(
-          builder: (BuildContext context) {
-            return Container(
-                width: MediaQuery.of(context).size.width,
-                margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                decoration: BoxDecoration(
-                    color: Colors.amber,
-                    borderRadius: BorderRadius.circular(5)),
-                child: Center(
-                  child: Text(
-                    'Text $i',
-                    style: const TextStyle(fontSize: 16.0),
-                  ),
-                ));
-          },
-        );
-      }).toList(),
+      items: [
+        Image.asset('assets/images/berita-hero.png'),
+        Image.asset('assets/images/data-statistik-hero.png'),
+        Image.asset('assets/images/infografis-hero.png'),
+        Image.asset('assets/images/publikasi-hero.png'),
+      ],
     );
   }
 }

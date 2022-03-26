@@ -3,8 +3,15 @@ import 'package:google_fonts/google_fonts.dart';
 
 class ImageCard extends StatelessWidget {
   final Color warnaKiri, warnaKanan;
+  final String title;
+  final String logo;
 
-  const ImageCard({Key? key, required this.warnaKiri, required this.warnaKanan})
+  ImageCard(
+      {Key? key,
+      required this.warnaKiri,
+      required this.warnaKanan,
+      required this.title,
+      required this.logo})
       : super(key: key);
 
   @override
@@ -24,13 +31,15 @@ class ImageCard extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          // Image.asset('assets/images/berita-hero.png'),
-          Text('Sosial dan Kependudukan',
-              style: GoogleFonts.poppins(
-                  textStyle: const TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14))),
+          Expanded(child: Image.asset(logo)),
+          Expanded(
+            child: Text(title,
+                style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white)),
+          ),
         ],
       ),
     );
