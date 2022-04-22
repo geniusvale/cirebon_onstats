@@ -1,4 +1,5 @@
 import 'package:cirebon_onstats/UI/widgets/carousel_hero.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../widgets/widgets.dart';
@@ -20,8 +21,11 @@ class _BerandaState extends State<Beranda> {
           systemOverlayStyle: const SystemUiOverlayStyle(
             statusBarColor: Color(0xFF043277),
           ),
-          backgroundColor: Color(0xFF043277),
+          backgroundColor: const Color(0xFF043277),
           centerTitle: true,
+          actions: [
+            IconButton(onPressed: () {}, icon: const Icon(Icons.refresh))
+          ],
           title: Container(
               width: 130,
               height: 36,

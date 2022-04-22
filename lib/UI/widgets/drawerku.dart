@@ -25,36 +25,47 @@ class DrawerKu extends StatelessWidget {
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.close,
                         color: Colors.white,
                       )),
                 ],
               )),
             ),
-            ListMenuDrawer(
+            const ListMenuDrawer(
               icon: Icons.home,
               title: 'Beranda',
+              routeName: '/',
             ),
-            ListMenuDrawer(
+            const ListMenuDrawer(
               icon: Icons.bar_chart,
               title: 'Statistik',
+              routeName: '',
             ),
-            ListMenuDrawer(
+            const ListMenuDrawer(
+              icon: Icons.newspaper_outlined,
+              title: 'Berita',
+              routeName: '/berita',
+            ),
+            const ListMenuDrawer(
               icon: Icons.newspaper,
               title: 'BRS',
+              routeName: '',
             ),
-            ListMenuDrawer(
-              icon: Icons.image,
-              title: 'Infografis',
-            ),
-            ListMenuDrawer(
+            const ListMenuDrawer(
               icon: Icons.book,
               title: 'Publikasi',
+              routeName: '',
             ),
-            ListMenuDrawer(
+            const ListMenuDrawer(
+              icon: Icons.image,
+              title: 'Infografis',
+              routeName: '',
+            ),
+            const ListMenuDrawer(
               icon: Icons.info,
               title: 'Tentang Kami',
+              routeName: '',
             ),
           ],
         ),
@@ -66,8 +77,13 @@ class DrawerKu extends StatelessWidget {
 class ListMenuDrawer extends StatelessWidget {
   final IconData icon;
   final String title;
+  final String routeName;
 
-  const ListMenuDrawer({Key? key, required this.icon, required this.title})
+  const ListMenuDrawer(
+      {Key? key,
+      required this.icon,
+      required this.title,
+      required this.routeName})
       : super(key: key);
 
   @override
@@ -81,7 +97,9 @@ class ListMenuDrawer extends StatelessWidget {
         title,
         style: TextStyle(color: Colors.white),
       ),
-      onTap: () {},
+      onTap: () {
+        Navigator.pushNamed(context, routeName);
+      },
     );
   }
 }
