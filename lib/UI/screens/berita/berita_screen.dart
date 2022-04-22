@@ -20,24 +20,26 @@ class _BeritaScreenState extends State<BeritaScreen> {
         backgroundColor: const Color(0xFF043277),
       ),
       body: FutureBuilder(
-          future: beritaData.getAllBerita(),
-          builder: (context, snapshot) {
-            return ListView.builder(
-                itemCount: beritaData.berita.length,
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    onTap: () {
-                      Navigator.pushNamed(context, '/beritaDetail',
-                          arguments: beritaData.berita[index]);
-                    },
-                    leading: CircleAvatar(
-                        child: Text('${beritaData.berita[index].news_id}')),
-                    title: Text(beritaData.berita[index].title),
-                    subtitle: Text(beritaData.berita[index].news),
-                    trailing: Text(beritaData.berita[index].rl_date),
-                  );
-                });
-          }),
+        future: beritaData.getAllBerita(),
+        builder: (context, snapshot) {
+          return ListView.builder(
+            itemCount: beritaData.berita.length,
+            itemBuilder: (context, index) {
+              return ListTile(
+                onTap: () {
+                  Navigator.pushNamed(context, '/beritaDetail',
+                      arguments: beritaData.berita[index]);
+                },
+                leading: CircleAvatar(
+                    child: Text('${beritaData.berita[index].news_id}')),
+                title: Text(beritaData.berita[index].title),
+                subtitle: Text(beritaData.berita[index].news),
+                trailing: Text(beritaData.berita[index].rl_date),
+              );
+            },
+          );
+        },
+      ),
     );
   }
 }

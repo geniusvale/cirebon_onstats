@@ -50,12 +50,12 @@ class DrawerKu extends StatelessWidget {
             const ListMenuDrawer(
               icon: Icons.newspaper,
               title: 'BRS',
-              routeName: '',
+              routeName: '/brs',
             ),
             const ListMenuDrawer(
               icon: Icons.book,
               title: 'Publikasi',
-              routeName: '',
+              routeName: '/publikasi',
             ),
             const ListMenuDrawer(
               icon: Icons.image,
