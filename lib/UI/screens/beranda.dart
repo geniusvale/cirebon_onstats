@@ -16,27 +16,30 @@ class _BerandaState extends State<Beranda> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: const DrawerKu(),
-        appBar: AppBar(
-          systemOverlayStyle: const SystemUiOverlayStyle(
-            statusBarColor: Color(0xFF043277),
-          ),
-          backgroundColor: const Color(0xFF043277),
-          centerTitle: true,
-          actions: [
-            IconButton(
-                onPressed: () {
-                  BeritaAPI().getBeritaDetail(4);
-                },
-                icon: const Icon(Icons.refresh))
-          ],
-          title: SizedBox(
-              width: 130,
-              height: 36,
-              child: Image.asset('assets/images/appbar-logo.png')),
+      backgroundColor: const Color(0xFF043277),
+      drawer: const DrawerKu(),
+      appBar: AppBar(
+        systemOverlayStyle: const SystemUiOverlayStyle(
+          statusBarColor: Color(0xFF043277),
         ),
-        body: SafeArea(
-            child: SingleChildScrollView(
+        backgroundColor: const Color(0xFF043277),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {
+              BeritaAPI().getBeritaDetail(4);
+            },
+            icon: const Icon(Icons.refresh),
+          )
+        ],
+        title: SizedBox(
+          width: 130,
+          height: 36,
+          child: Image.asset('assets/images/appbar-logo.png'),
+        ),
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
@@ -45,13 +48,15 @@ class _BerandaState extends State<Beranda> {
               const SizedBox(height: 25),
               Container(
                 width: double.infinity,
-                margin: const EdgeInsets.symmetric(horizontal: 40),
-                child: const Text('Beranda',
-                    style: TextStyle(
-                        fontFamily: 'Poppins',
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18)),
+                margin: const EdgeInsets.symmetric(horizontal: 20),
+                child: const Text(
+                  'Beranda',
+                  style: TextStyle(
+                      fontFamily: 'Poppins',
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18),
+                ),
               ),
               const SizedBox(height: 8),
               Row(
@@ -77,13 +82,16 @@ class _BerandaState extends State<Beranda> {
               const SizedBox(height: 25),
               Container(
                 width: double.infinity,
-                margin: const EdgeInsets.symmetric(horizontal: 40),
-                child: Text('Tabel Statistik Publik',
-                    style: GoogleFonts.poppins(
-                        textStyle: const TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18))),
+                margin: const EdgeInsets.symmetric(horizontal: 20),
+                child: Text(
+                  'Tabel Statistik Publik',
+                  style: GoogleFonts.poppins(
+                    textStyle: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18),
+                  ),
+                ),
               ),
               const SizedBox(height: 8),
               ImageCard(
@@ -108,6 +116,8 @@ class _BerandaState extends State<Beranda> {
               ),
             ],
           ),
-        )));
+        ),
+      ),
+    );
   }
 }
