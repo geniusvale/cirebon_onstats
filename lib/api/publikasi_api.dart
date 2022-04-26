@@ -1,4 +1,3 @@
-
 import 'package:cirebon_onstats/model/publikasi/publikasi_model.dart';
 import 'package:dio/dio.dart';
 
@@ -16,5 +15,11 @@ class PublikasiAPI {
     } else {
       throw Exception('Tidak Ada Publikasi.');
     }
+  }
+
+  Future<PublikasiModel> getPubDetail(String id) async {
+    Response response = await Dio().get(
+        'https://webapi.bps.go.id/v1/api/view/domain/3274/model/publication/lang/ind/id/$id/key/841396623eaa7ad43906a4a64c96e7a1/');
+    return PublikasiModel.fromJson(response.data['data']);
   }
 }

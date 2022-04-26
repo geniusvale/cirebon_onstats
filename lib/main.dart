@@ -37,7 +37,9 @@ class MyApp extends StatelessWidget {
           '/berita': (context) => const BeritaScreen(),
           '/beritaDetail': (context) => const BeritaDetailScreen(),
           '/brs': (context) => const BRSScreen(),
+          '/brsDetail': (context) => const BRSDetailScreen(),
           '/publikasi': (context) => const PublikasiScreen(),
+          '/publikasiDetail': (context) => const PublikasiDetailScreen(),
         },
       ),
     );

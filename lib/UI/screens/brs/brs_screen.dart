@@ -15,6 +15,7 @@ class _BRSScreenState extends State<BRSScreen> {
     var brsData = Provider.of<BRSViewModel>(context);
 
     return Scaffold(
+      backgroundColor: const Color(0xFF043277),
       appBar: AppBar(
         title: const Text('BRS'),
         backgroundColor: const Color(0xFF043277),
@@ -25,16 +26,16 @@ class _BRSScreenState extends State<BRSScreen> {
           return ListView.builder(
             itemCount: brsData.brs.length,
             itemBuilder: (context, index) {
-              return ListTile(
-                onTap: () {
-                  Navigator.pushNamed(context, '', arguments: '');
-                },
-                leading: CircleAvatar(
-                  child: Text('${brsData.brs[index].brs_id}'),
+              return Card(
+                child: ListTile(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/brsDetail',
+                        arguments: brsData.brs[index].brs_id);
+                  },
+                  title: Text(brsData.brs[index].title),
+                  subtitle: Text(brsData.brs[index].subj!),
+                  trailing: const Icon(Icons.chevron_right_outlined),
                 ),
-                title: Text(brsData.brs[index].title),
-                subtitle: Text(brsData.brs[index].subj!),
-                trailing: Text(brsData.brs[index].rl_date),
               );
             },
           );

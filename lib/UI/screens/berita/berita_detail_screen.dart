@@ -17,6 +17,7 @@ class _BeritaDetailScreenState extends State<BeritaDetailScreen> {
     var beritaData = Provider.of<BeritaViewModel>(context, listen: false);
     final id = ModalRoute.of(context)!.settings.arguments as int;
     return Scaffold(
+      backgroundColor: const Color(0xFF043277),
       appBar: AppBar(
         title: const Text('Detail Berita'),
         backgroundColor: const Color(0xFF043277),
@@ -24,12 +25,37 @@ class _BeritaDetailScreenState extends State<BeritaDetailScreen> {
       body: FutureBuilder(
         future: beritaData.getBeritaDetail(id),
         builder: (context, snapshot) {
-          return ListView(
-            children: [
-              Text(beritaData.beritaDetail.title),
-              Html(data: beritaData.beritaDetail.news),
-              Text(beritaData.beritaDetail.rl_date),
-            ],
+          if (snapshot.connectionState != ConnectionState.done &&
+              !snapshot.hasData) {
+            return const Center(child: CircularProgressIndicator());
+          }
+          return SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Image.network(
+                  '${beritaData.beritaDetail.picture}',
+                  width: MediaQuery.of(context).size.width,
+                  fit: BoxFit.contain,
+                ),
+                Text(
+                  beritaData.beritaDetail.title,
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24,
+                      color: Colors.white),
+                ),
+                Text(
+                  'Tanggal Rilis : ${beritaData.beritaDetail.rl_date}',
+                  style: const TextStyle(color: Colors.white),
+                ),
+                const SizedBox(height: 8),
+                Html(
+                  data: beritaData.beritaDetail.news,
+                  style: {'body': Style(color: Colors.white)},
+                )
+              ],
+            ),
           );
         },
       ),

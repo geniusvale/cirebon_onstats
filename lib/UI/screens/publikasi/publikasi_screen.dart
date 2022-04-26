@@ -15,6 +15,7 @@ class _PublikasiScreenState extends State<PublikasiScreen> {
     var publikasiData = Provider.of<PublikasiViewModel>(context);
 
     return Scaffold(
+      backgroundColor: const Color(0xFF043277),
       appBar: AppBar(
         title: const Text('Publikasi'),
         backgroundColor: const Color(0xFF043277),
@@ -25,16 +26,16 @@ class _PublikasiScreenState extends State<PublikasiScreen> {
           return ListView.builder(
             itemCount: publikasiData.publikasi.length,
             itemBuilder: (context, index) {
-              return ListTile(
-                onTap: () {
-                  // Navigator.pushNamed(context, '', arguments: '');
-                },
-                leading: CircleAvatar(
-                  child: Text('${publikasiData.publikasi[index].pub_id}'),
+              return Card(
+                child: ListTile(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/publikasiDetail',
+                        arguments: publikasiData.publikasi[index].pub_id);
+                  },
+                  title: Text(publikasiData.publikasi[index].title),
+                  subtitle: Text(publikasiData.publikasi[index].size!),
+                  trailing: const Icon(Icons.chevron_right_outlined),
                 ),
-                title: Text(publikasiData.publikasi[index].title),
-                subtitle: Text(publikasiData.publikasi[index].issn),
-                trailing: Text(publikasiData.publikasi[index].rl_date),
               );
             },
           );
