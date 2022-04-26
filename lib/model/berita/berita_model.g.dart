@@ -8,14 +8,14 @@ part of 'berita_model.dart';
 
 BeritaModel _$BeritaModelFromJson(Map<String, dynamic> json) => BeritaModel(
       news_id: json['news_id'] as int,
+      newscat_id: json['newscat_id'] as String?,
+      newscat_name: json['newscat_name'] as String?,
+      news_type: json['news_type'] as String?,
       title: json['title'] as String,
       news: json['news'] as String,
       rl_date: json['rl_date'] as String,
-    )
-      ..newscat_id = json['newscat_id'] as String?
-      ..newscat_name = json['newscat_name'] as String?
-      ..news_type = json['news_type'] as String?
-      ..picture = json['picture'] as String?;
+      picture: json['picture'] as String?,
+    );
 
 Map<String, dynamic> _$BeritaModelToJson(BeritaModel instance) =>
     <String, dynamic>{

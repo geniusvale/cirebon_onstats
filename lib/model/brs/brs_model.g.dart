@@ -8,15 +8,15 @@ part of 'brs_model.dart';
 
 BRSModel _$BRSModelFromJson(Map<String, dynamic> json) => BRSModel(
       brs_id: json['brs_id'] as int,
+      subj_id: json['subj_id'] as int?,
+      subj: json['subj'] as String?,
       title: json['title'] as String,
+      abstract: json['abstract'] as String?,
       rl_date: json['rl_date'] as String,
-    )
-      ..subj_id = json['subj_id'] as int?
-      ..subj = json['subj'] as String?
-      ..abstract = json['abstract'] as String?
-      ..updt_date = json['updt_date'] as String?
-      ..pdf = json['pdf'] as String?
-      ..size = json['size'] as String?;
+      updt_date: json['updt_date'] as String?,
+      pdf: json['pdf'] as String?,
+      size: json['size'] as String?,
+    );
 
 Map<String, dynamic> _$BRSModelToJson(BRSModel instance) => <String, dynamic>{
       'brs_id': instance.brs_id,

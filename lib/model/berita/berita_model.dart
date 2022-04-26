@@ -14,9 +14,13 @@ class BeritaModel {
 
   BeritaModel({
     required this.news_id,
+    this.newscat_id,
+    this.newscat_name,
+    this.news_type,
     required this.title,
     required this.news,
     required this.rl_date,
+    this.picture,
   });
 
   factory BeritaModel.fromJson(Map<String, dynamic> json) =>

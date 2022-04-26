@@ -16,4 +16,11 @@ class BeritaAPI {
       throw Exception('Tidak Ada Berita.');
     }
   }
+
+  Future<BeritaModel> getBeritaDetail(int id) async {
+    Response response = await Dio().get(
+        'https://webapi.bps.go.id/v1/api/view/domain/3274/model/news/lang/ind/id/$id/key/841396623eaa7ad43906a4a64c96e7a1/');
+
+    return BeritaModel.fromJson(response.data['data']);
+  }
 }

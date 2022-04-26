@@ -19,9 +19,16 @@ class PublikasiModel {
   PublikasiModel({
     required this.pub_id,
     required this.title,
+    this.kat_no,
+    this.pub_no,
     required this.issn,
+    this.abstract,
+    this.sch_date,
     required this.rl_date,
+    this.updt_date,
     required this.cover,
+    this.pdf,
+    this.size,
   });
 
   factory PublikasiModel.fromJson(Map<String, dynamic> json) =>

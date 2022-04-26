@@ -33,11 +33,11 @@ class MyApp extends StatelessWidget {
         title: 'Cirebon OnStats',
         initialRoute: '/',
         routes: {
-          '/': (context) => Beranda(),
-          '/berita': (context) => BeritaScreen(),
-          '/beritaDetail': (context) => BeritaDetailScreen(),
-          '/brs': (context) => BRSScreen(),
-          '/publikasi': (context) => PublikasiScreen(),
+          '/': (context) => const Beranda(),
+          '/berita': (context) => const BeritaScreen(),
+          '/beritaDetail': (context) => const BeritaDetailScreen(),
+          '/brs': (context) => const BRSScreen(),
+          '/publikasi': (context) => const PublikasiScreen(),
         },
       ),
     );

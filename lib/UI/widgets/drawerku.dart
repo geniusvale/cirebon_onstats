@@ -6,62 +6,70 @@ class DrawerKu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: Color(0xFF043277),
+      backgroundColor: const Color(0xFF043277),
       child: SafeArea(
         child: ListView(
-          padding: EdgeInsets.symmetric(horizontal: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 15),
           children: [
             SizedBox(
               height: 90,
               child: DrawerHeader(
-                  child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(
-                      width: 47,
-                      height: 47,
-                      child: Image.asset('assets/images/bps-icon.png')),
-                  IconButton(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                        width: 47,
+                        height: 47,
+                        child: Image.asset('assets/images/bps-icon.png')),
+                    IconButton(
                       onPressed: () {
                         Navigator.pop(context);
                       },
                       icon: const Icon(
                         Icons.close,
                         color: Colors.white,
-                      )),
-                ],
-              )),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
             const ListMenuDrawer(
               icon: Icons.home,
               title: 'Beranda',
               routeName: '/',
             ),
+            const SizedBox(height: 5),
             const ListMenuDrawer(
               icon: Icons.bar_chart,
               title: 'Statistik',
               routeName: '',
             ),
+            const SizedBox(height: 5),
             const ListMenuDrawer(
               icon: Icons.newspaper_outlined,
               title: 'Berita',
               routeName: '/berita',
             ),
+            const SizedBox(height: 5),
             const ListMenuDrawer(
               icon: Icons.newspaper,
               title: 'BRS',
               routeName: '/brs',
             ),
+            const SizedBox(height: 5),
             const ListMenuDrawer(
               icon: Icons.book,
               title: 'Publikasi',
               routeName: '/publikasi',
             ),
+            const SizedBox(height: 5),
             const ListMenuDrawer(
               icon: Icons.image,
               title: 'Infografis',
               routeName: '',
             ),
+            const SizedBox(height: 5),
             const ListMenuDrawer(
               icon: Icons.info,
               title: 'Tentang Kami',
@@ -89,13 +97,17 @@ class ListMenuDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(5),
+        side: const BorderSide(color: Colors.white),
+      ),
       leading: Icon(
         icon,
         color: Colors.white,
       ),
       title: Text(
         title,
-        style: TextStyle(color: Colors.white),
+        style: const TextStyle(color: Colors.white),
       ),
       onTap: () {
         Navigator.pushNamed(context, routeName);

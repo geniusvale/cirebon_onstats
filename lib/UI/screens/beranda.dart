@@ -1,5 +1,5 @@
 import 'package:cirebon_onstats/UI/widgets/carousel_hero.dart';
-import 'package:dio/dio.dart';
+import 'package:cirebon_onstats/api/berita_api.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../widgets/widgets.dart';
@@ -24,9 +24,13 @@ class _BerandaState extends State<Beranda> {
           backgroundColor: const Color(0xFF043277),
           centerTitle: true,
           actions: [
-            IconButton(onPressed: () {}, icon: const Icon(Icons.refresh))
+            IconButton(
+                onPressed: () {
+                  BeritaAPI().getBeritaDetail(4);
+                },
+                icon: const Icon(Icons.refresh))
           ],
-          title: Container(
+          title: SizedBox(
               width: 130,
               height: 36,
               child: Image.asset('assets/images/appbar-logo.png')),
@@ -53,7 +57,7 @@ class _BerandaState extends State<Beranda> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 mainAxisSize: MainAxisSize.max,
-                children: [
+                children: const [
                   SquareCard(
                     iconLogo: Icons.people,
                     warna: Color(0xFF128EDB),
@@ -85,22 +89,22 @@ class _BerandaState extends State<Beranda> {
               ImageCard(
                 title: 'Sosial dan Kependudukan',
                 logo: 'assets/images/sosduk-logo.png',
-                warnaKiri: Color(0xFF128EDB),
-                warnaKanan: Color(0xFF043277),
+                warnaKiri: const Color(0xFF128EDB),
+                warnaKanan: const Color(0xFF043277),
               ),
               const SizedBox(height: 25),
               ImageCard(
                 title: 'Ekonomi dan Perdagangan',
                 logo: 'assets/images/ekoper-logo.png',
-                warnaKiri: Color(0xFFEC8611),
-                warnaKanan: Color(0xFFDC7418),
+                warnaKiri: const Color(0xFFEC8611),
+                warnaKanan: const Color(0xFFDC7418),
               ),
               const SizedBox(height: 25),
               ImageCard(
                 title: 'Pertanian dan Pertambangan',
                 logo: 'assets/images/pertani-logo.png',
-                warnaKiri: Color(0xFF00CC83),
-                warnaKanan: Color(0xFF00A66A),
+                warnaKiri: const Color(0xFF00CC83),
+                warnaKanan: const Color(0xFF00A66A),
               ),
             ],
           ),

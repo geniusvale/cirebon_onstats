@@ -15,8 +15,14 @@ class BRSModel {
 
   BRSModel({
     required this.brs_id,
+    this.subj_id,
+    this.subj,
     required this.title,
+    this.abstract,
     required this.rl_date,
+    this.updt_date,
+    this.pdf,
+    this.size,
   });
 
   factory BRSModel.fromJson(Map<String, dynamic> json) =>
