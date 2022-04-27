@@ -12,26 +12,38 @@ class CarouselHero extends StatelessWidget {
         autoPlay: true,
       ),
       items: [
-        Card(
-            child: Image.asset(
-          'assets/images/berita-hero.png',
-          fit: BoxFit.fill,
-        )),
-        Card(
-            child: Image.asset(
-          'assets/images/data-statistik-hero.png',
-          fit: BoxFit.fill,
-        )),
-        Card(
-            child: Image.asset(
-          'assets/images/infografis-hero.png',
-          fit: BoxFit.fill,
-        )),
-        Card(
-            child: Image.asset(
-          'assets/images/publikasi-hero.png',
-          fit: BoxFit.fill,
-        )),
+        GestureDetector(
+          onTap: () => Navigator.pushNamed(context, '/berita'),
+          child: Card(
+              child: Image.asset(
+            'assets/images/berita-hero.png',
+            fit: BoxFit.fill,
+          )),
+        ),
+        GestureDetector(
+          onTap: () => Navigator.pushNamed(context, '/statistik'),
+          child: Card(
+              child: Image.asset(
+            'assets/images/data-statistik-hero.png',
+            fit: BoxFit.fill,
+          )),
+        ),
+        GestureDetector(
+          onTap: () => Navigator.pushNamed(context, '/infografis'),
+          child: Card(
+              child: Image.asset(
+            'assets/images/infografis-hero.png',
+            fit: BoxFit.fill,
+          )),
+        ),
+        GestureDetector(
+          onTap: () => Navigator.pushNamed(context, '/publikasi'),
+          child: Card(
+              child: Image.asset(
+            'assets/images/publikasi-hero.png',
+            fit: BoxFit.fill,
+          )),
+        ),
       ],
     );
   }

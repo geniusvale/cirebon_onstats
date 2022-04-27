@@ -71,6 +71,12 @@ class DrawerKu extends StatelessWidget {
             ),
             const SizedBox(height: 5),
             const ListMenuDrawer(
+              icon: Icons.local_activity_outlined,
+              title: 'Data Statistik Lokal',
+              routeName: '/lokalStatsScreen',
+            ),
+            const SizedBox(height: 5),
+            const ListMenuDrawer(
               icon: Icons.info,
               title: 'Tentang Kami',
               routeName: '',

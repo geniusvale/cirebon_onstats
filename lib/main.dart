@@ -34,6 +34,8 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (context) => const Beranda(),
+          '/lokalStatsScreen': (context) => const LokalStatsScreen(),
+          '/addLokalData': (context) => const AddLokalDataScreen(),
           '/berita': (context) => const BeritaScreen(),
           '/beritaDetail': (context) => const BeritaDetailScreen(),
           '/brs': (context) => const BRSScreen(),
