@@ -8,19 +8,19 @@ part of 'publikasi_model.dart';
 
 PublikasiModel _$PublikasiModelFromJson(Map<String, dynamic> json) =>
     PublikasiModel(
-      pub_id: json['pub_id'],
+      pub_id: json['pub_id'] as String,
       title: json['title'] as String,
+      kat_no: json['kat_no'] as String?,
+      pub_no: json['pub_no'] as String?,
       issn: json['issn'] as String,
+      abstract: json['abstract'] as String?,
+      sch_date: json['sch_date'] as String?,
       rl_date: json['rl_date'] as String,
+      updt_date: json['updt_date'] as String?,
       cover: json['cover'] as String,
-    )
-      ..kat_no = json['kat_no'] as String?
-      ..pub_no = json['pub_no'] as String?
-      ..abstract = json['abstract'] as String?
-      ..sch_date = json['sch_date'] as String?
-      ..updt_date = json['updt_date'] as String?
-      ..pdf = json['pdf'] as String?
-      ..size = json['size'] as String?;
+      pdf: json['pdf'] as String?,
+      size: json['size'] as String?,
+    );
 
 Map<String, dynamic> _$PublikasiModelToJson(PublikasiModel instance) =>
     <String, dynamic>{

@@ -3,7 +3,7 @@ part 'publikasi_model.g.dart';
 
 @JsonSerializable()
 class PublikasiModel {
-  var pub_id;
+  String pub_id;
   String title;
   String? kat_no;
   String? pub_no;

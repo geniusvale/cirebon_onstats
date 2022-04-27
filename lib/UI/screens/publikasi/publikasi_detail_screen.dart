@@ -12,7 +12,7 @@ class PublikasiDetailScreen extends StatefulWidget {
 class _PublikasiDetailScreenState extends State<PublikasiDetailScreen> {
   @override
   Widget build(BuildContext context) {
-    var pubData = Provider.of<PublikasiViewModel>(context);
+    var pubData = Provider.of<PublikasiViewModel>(context, listen: false);
     final id = ModalRoute.of(context)!.settings.arguments as String;
     return Scaffold(
       backgroundColor: const Color(0xFF043277),

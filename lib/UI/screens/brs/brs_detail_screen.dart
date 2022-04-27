@@ -13,7 +13,7 @@ class BRSDetailScreen extends StatefulWidget {
 class _BRSDetailScreenState extends State<BRSDetailScreen> {
   @override
   Widget build(BuildContext context) {
-    var brsData = Provider.of<BRSViewModel>(context);
+    var brsData = Provider.of<BRSViewModel>(context, listen: false);
     final id = ModalRoute.of(context)!.settings.arguments as int;
     return Scaffold(
       backgroundColor: const Color(0xFF043277),
