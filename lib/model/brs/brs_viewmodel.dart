@@ -8,14 +8,16 @@ class BRSViewModel with ChangeNotifier {
 
   late BRSModel brsDetail;
 
-  Future getAllBRS() async {
-    final brsData = await BRSAPI().fetchAllBRS();
+  Future<List<BRSModel>> getAllBRS(int page) async {
+    final brsData = await BRSAPI().fetchAllBRS(page);
     _brs = brsData;
     notifyListeners();
+    return brs;
   }
 
-  Future getBRSDetail(int id) async {
+  Future<BRSModel?> getBRSDetail(int id) async {
     brsDetail = await BRSAPI().getBRSDetail(id);
     notifyListeners();
+    return brsDetail;
   }
 }

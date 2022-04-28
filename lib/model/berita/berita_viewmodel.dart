@@ -8,14 +8,16 @@ class BeritaViewModel with ChangeNotifier {
 
   late BeritaModel beritaDetail;
 
-  Future getAllBerita() async {
+  Future<List<BeritaModel>> getAllBerita() async {
     final beritaData = await BeritaAPI().fetchAllBerita();
     _berita = beritaData;
     notifyListeners();
+    return berita;
   }
 
-  Future getBeritaDetail(int id) async {
+  Future<BeritaModel> getBeritaDetail(int id) async {
     beritaDetail = await BeritaAPI().getBeritaDetail(id);
     notifyListeners();
+    return beritaDetail;
   }
 }

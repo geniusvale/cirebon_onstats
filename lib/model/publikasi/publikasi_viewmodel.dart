@@ -8,14 +8,16 @@ class PublikasiViewModel with ChangeNotifier {
 
   late PublikasiModel pubDetail;
 
-  Future getAllPublikasi() async {
-    final publikasiData = await PublikasiAPI().fetchAllPublikasi();
+  Future<List<PublikasiModel>> getAllPublikasi(int page) async {
+    final publikasiData = await PublikasiAPI().fetchAllPublikasi(page);
     _publikasi = publikasiData;
     notifyListeners();
+    return publikasi;
   }
 
-  Future getPubDetail(String id) async {
+  Future<PublikasiModel?> getPubDetail(String id) async {
     pubDetail = await PublikasiAPI().getPubDetail(id);
     notifyListeners();
+    return pubDetail;
   }
 }

@@ -15,6 +15,7 @@ class _BRSDetailScreenState extends State<BRSDetailScreen> {
   Widget build(BuildContext context) {
     var brsData = Provider.of<BRSViewModel>(context, listen: false);
     final id = ModalRoute.of(context)!.settings.arguments as int;
+
     return Scaffold(
       backgroundColor: const Color(0xFF043277),
       appBar: AppBar(
@@ -29,13 +30,41 @@ class _BRSDetailScreenState extends State<BRSDetailScreen> {
             return const Center(child: CircularProgressIndicator());
           }
           return SingleChildScrollView(
+            padding: const EdgeInsets.all(8.0),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const SizedBox(height: 8),
                 Text(
                   brsData.brsDetail.title,
-                  style: const TextStyle(color: Colors.white),
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
                 ),
-                Html(data: brsData.brsDetail.abstract),
+                const SizedBox(height: 8),
+                Text(
+                  'Jadwal Rilis : ' + brsData.brsDetail.rl_date,
+                  style: const TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                Text(
+                  'Ukuran File : ' + brsData.brsDetail.size!,
+                  style: const TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                TextButton.icon(
+                    onPressed: () {},
+                    icon: const Icon(Icons.download, color: Colors.white),
+                    label: const Text('Unduh',
+                        style: TextStyle(color: Colors.white))),
+                Html(
+                  data: brsData.brsDetail.abstract,
+                  style: {'body': Style(color: Colors.white)},
+                ),
               ],
             ),
           );
