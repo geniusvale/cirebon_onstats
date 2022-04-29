@@ -1,4 +1,4 @@
-import 'package:cirebon_onstats/ui/widgets/carousel_hero.dart';
+import 'package:cirebon_onstats/widgets/carousel_hero.dart';
 import 'package:cirebon_onstats/api/berita_api.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

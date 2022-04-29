@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-import 'ui/screens/pages.dart';
+import 'screens/pages.dart';
 
 import 'package:cirebon_onstats/firebase_options.dart';
 import 'package:cirebon_onstats/model/berita/berita_viewmodel.dart';

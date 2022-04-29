@@ -49,7 +49,7 @@ class _BRSScreenState extends State<BRSScreen> {
     return Scaffold(
       backgroundColor: const Color(0xFF043277),
       appBar: AppBar(
-        title: const Text('BRS'),
+        title: const Text('Berita Resmi Statistik'),
         backgroundColor: const Color(0xFF043277),
       ),
       body: FutureBuilder(

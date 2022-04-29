@@ -35,49 +35,70 @@ class DrawerKu extends StatelessWidget {
               ),
             ),
             const ListMenuDrawer(
-              icon: Icons.home,
+              icon: Icons.home_outlined,
               title: 'Beranda',
               routeName: '/',
             ),
-            const SizedBox(height: 5),
-            const ListMenuDrawer(
-              icon: Icons.bar_chart,
-              title: 'Statistik',
-              routeName: '',
-            ),
-            const SizedBox(height: 5),
+            const SizedBox(height: 8),
+            const ExpansionTile(
+                title: Text('Statistik'),
+                textColor: Colors.white,
+                collapsedTextColor: Colors.white,
+                iconColor: Colors.white,
+                collapsedIconColor: Colors.white,
+                children: [
+                  ListTile(
+                    title: Text(
+                      'Sosial dan Kependudukan',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  ListTile(
+                    title: Text(
+                      'Ekonomi dan Perdagangan',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  ListTile(
+                    title: Text(
+                      'Pertanian dan Pertambangan',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ]),
+            const SizedBox(height: 8),
             const ListMenuDrawer(
               icon: Icons.newspaper_outlined,
               title: 'Berita',
               routeName: '/berita',
             ),
-            const SizedBox(height: 5),
+            const SizedBox(height: 8),
             const ListMenuDrawer(
-              icon: Icons.newspaper,
+              icon: Icons.local_post_office_outlined,
               title: 'BRS',
               routeName: '/brs',
             ),
-            const SizedBox(height: 5),
+            const SizedBox(height: 8),
             const ListMenuDrawer(
-              icon: Icons.book,
+              icon: Icons.book_outlined,
               title: 'Publikasi',
               routeName: '/publikasi',
             ),
-            const SizedBox(height: 5),
+            const SizedBox(height: 8),
             const ListMenuDrawer(
-              icon: Icons.image,
+              icon: Icons.image_outlined,
               title: 'Infografis',
               routeName: '',
             ),
-            const SizedBox(height: 5),
+            const SizedBox(height: 8),
             const ListMenuDrawer(
-              icon: Icons.local_activity_outlined,
+              icon: Icons.local_library_outlined,
               title: 'Data Statistik Lokal',
               routeName: '/lokalStatsScreen',
             ),
-            const SizedBox(height: 5),
+            const SizedBox(height: 8),
             const ListMenuDrawer(
-              icon: Icons.info,
+              icon: Icons.info_outlined,
               title: 'Tentang Kami',
               routeName: '',
             ),
@@ -103,10 +124,10 @@ class ListMenuDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(5),
-        side: const BorderSide(color: Colors.white),
-      ),
+      // shape: RoundedRectangleBorder(
+      //   borderRadius: BorderRadius.circular(50),
+      //   side: const BorderSide(color: Colors.white),
+      // ),
       leading: Icon(
         icon,
         color: Colors.white,
