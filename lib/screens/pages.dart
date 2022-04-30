@@ -13,3 +13,5 @@ export 'publikasi/publikasi_screen.dart';
 export 'publikasi/publikasi_detail_screen.dart';
 
 export './statistik/sosial_kependudukan/sosduk_subject.dart';
+export './statistik/sosial_kependudukan/sosduk_var.dart';
+export './statistik/sosial_kependudukan/sosduk_data.dart';

@@ -6,20 +6,20 @@ class Data {
   @JsonKey(name: 'var')
   List<Var> dataVar;
   List<TurVar>? turvar;
-  String? labelvervar;
+  String labelvervar;
   List<VerVar>? vervar;
   List<Tahun>? tahun;
   List<TurTahun>? turtahun;
-  String? datacontent;
+  Map datacontent;
 
   Data(
       {required this.dataVar,
       this.turvar,
-      this.labelvervar,
+      required this.labelvervar,
       this.vervar,
       this.tahun,
       this.turtahun,
-      this.datacontent});
+      required this.datacontent});
 
   factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
 
@@ -28,13 +28,17 @@ class Data {
 
 @JsonSerializable()
 class TurTahun {
-  int turth_id;
+  int? turth_id;
+  int? val;
+  String? label;
   String? turth;
   int? group_turth_id;
   String? name_group_turth;
 
   TurTahun(
-      {required this.turth_id,
+      {this.turth_id,
+      this.val,
+      this.label,
       this.turth,
       this.group_turth_id,
       this.name_group_turth});
@@ -47,13 +51,17 @@ class TurTahun {
 
 @JsonSerializable()
 class TurVar {
-  int turvar_id;
+  int? turvar_id;
+  int? val;
+  String? label;
   String? turvar;
   int? group_turvar_id;
   String? name_group_turvar;
 
   TurVar(
-      {required this.turvar_id,
+      {this.turvar_id,
+      this.val,
+      this.label,
       this.turvar,
       this.group_turvar_id,
       this.name_group_turvar});
@@ -65,10 +73,12 @@ class TurVar {
 
 @JsonSerializable()
 class Tahun {
-  int th_id;
+  int? th_id;
+  int? val;
+  String? label;
   String? th;
 
-  Tahun({required this.th_id, this.th});
+  Tahun({this.th_id, this.val, this.label, this.th});
 
   factory Tahun.fromJson(Map<String, dynamic> json) => _$TahunFromJson(json);
 
@@ -89,8 +99,11 @@ class Unit {
 
 @JsonSerializable()
 class Var {
-  int var_id;
-  String title;
+  int? val;
+  String? label;
+  String? subj;
+  int? var_id;
+  String? title;
   int? sub_id;
   String? sub_name;
   String? def;
@@ -101,8 +114,11 @@ class Var {
   String? graph_name;
 
   Var(
-      {required this.var_id,
-      required this.title,
+      {this.val,
+      this.label,
+      this.subj,
+      this.var_id,
+      this.title,
       this.sub_id,
       this.sub_name,
       this.def,
@@ -145,9 +161,15 @@ class Subject {
   String? subcat;
   var ntabel;
 
-  Subject({required this.sub_id, required this.title, this.subcat_id, this.subcat, this.ntabel});
+  Subject(
+      {required this.sub_id,
+      required this.title,
+      this.subcat_id,
+      this.subcat,
+      this.ntabel});
 
-  factory Subject.fromJson(Map<String, dynamic> json) => _$SubjectFromJson(json);
+  factory Subject.fromJson(Map<String, dynamic> json) =>
+      _$SubjectFromJson(json);
 
   Map<String, dynamic> toJson() => _$SubjectToJson(this);
 }

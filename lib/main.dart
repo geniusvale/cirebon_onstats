@@ -45,6 +45,8 @@ class MyApp extends StatelessWidget {
           '/publikasi': (context) => const PublikasiScreen(),
           '/publikasiDetail': (context) => const PublikasiDetailScreen(),
           '/sosdukSubject': (context) => const SosDukSubjectScreen(),
+          '/sosdukVariable': (context) => const SosDukVariableScreen(),
+          '/sosdukData': (context) => const SosDukDataScreen(),
         },
       ),
     );

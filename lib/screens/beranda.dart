@@ -1,5 +1,5 @@
+import 'package:cirebon_onstats/model/statistik/statistik_viewmodel.dart';
 import 'package:cirebon_onstats/widgets/carousel_hero.dart';
-import 'package:cirebon_onstats/api/berita_api.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../widgets/widgets.dart';
@@ -26,8 +26,11 @@ class _BerandaState extends State<Beranda> {
         centerTitle: true,
         actions: [
           IconButton(
-            onPressed: () {
-              BeritaAPI().getBeritaDetail(4);
+            onPressed: () async {
+              // var test = await StatistikAPI().fetchStatsData(104);
+              // print(test);
+              var bro = await StatistikViewModel().getStatsData(104);
+              print(bro);
             },
             icon: const Icon(Icons.refresh),
           )

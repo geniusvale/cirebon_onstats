@@ -12,7 +12,7 @@ class SosDukSubjectScreen extends StatefulWidget {
 class _SosDukSubjectScreenState extends State<SosDukSubjectScreen> {
   @override
   Widget build(BuildContext context) {
-    var listSubject = Provider.of<StatistikViewModel>(context);
+    var listSubject = Provider.of<StatistikViewModel>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Sosial dan Kependudukan'),
@@ -25,6 +25,8 @@ class _SosDukSubjectScreenState extends State<SosDukSubjectScreen> {
             itemCount: listSubject.subject.length,
             itemBuilder: (context, index) {
               return ListTile(
+                onTap: () => Navigator.pushNamed(context, '/sosdukVariable',
+                    arguments: listSubject.subject[index].sub_id),
                 title: Text(listSubject.subject[index].title),
               );
             },

@@ -13,7 +13,7 @@ Data _$DataFromJson(Map<String, dynamic> json) => Data(
       turvar: (json['turvar'] as List<dynamic>?)
           ?.map((e) => TurVar.fromJson(e as Map<String, dynamic>))
           .toList(),
-      labelvervar: json['labelvervar'] as String?,
+      labelvervar: json['labelvervar'] as String,
       vervar: (json['vervar'] as List<dynamic>?)
           ?.map((e) => VerVar.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -23,7 +23,7 @@ Data _$DataFromJson(Map<String, dynamic> json) => Data(
       turtahun: (json['turtahun'] as List<dynamic>?)
           ?.map((e) => TurTahun.fromJson(e as Map<String, dynamic>))
           .toList(),
-      datacontent: json['datacontent'] as String?,
+      datacontent: json['datacontent'] as Map<String, dynamic>,
     );
 
 Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
@@ -37,7 +37,9 @@ Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
     };
 
 TurTahun _$TurTahunFromJson(Map<String, dynamic> json) => TurTahun(
-      turth_id: json['turth_id'] as int,
+      turth_id: json['turth_id'] as int?,
+      val: json['val'] as int?,
+      label: json['label'] as String?,
       turth: json['turth'] as String?,
       group_turth_id: json['group_turth_id'] as int?,
       name_group_turth: json['name_group_turth'] as String?,
@@ -45,13 +47,17 @@ TurTahun _$TurTahunFromJson(Map<String, dynamic> json) => TurTahun(
 
 Map<String, dynamic> _$TurTahunToJson(TurTahun instance) => <String, dynamic>{
       'turth_id': instance.turth_id,
+      'val': instance.val,
+      'label': instance.label,
       'turth': instance.turth,
       'group_turth_id': instance.group_turth_id,
       'name_group_turth': instance.name_group_turth,
     };
 
 TurVar _$TurVarFromJson(Map<String, dynamic> json) => TurVar(
-      turvar_id: json['turvar_id'] as int,
+      turvar_id: json['turvar_id'] as int?,
+      val: json['val'] as int?,
+      label: json['label'] as String?,
       turvar: json['turvar'] as String?,
       group_turvar_id: json['group_turvar_id'] as int?,
       name_group_turvar: json['name_group_turvar'] as String?,
@@ -59,18 +65,24 @@ TurVar _$TurVarFromJson(Map<String, dynamic> json) => TurVar(
 
 Map<String, dynamic> _$TurVarToJson(TurVar instance) => <String, dynamic>{
       'turvar_id': instance.turvar_id,
+      'val': instance.val,
+      'label': instance.label,
       'turvar': instance.turvar,
       'group_turvar_id': instance.group_turvar_id,
       'name_group_turvar': instance.name_group_turvar,
     };
 
 Tahun _$TahunFromJson(Map<String, dynamic> json) => Tahun(
-      th_id: json['th_id'] as int,
+      th_id: json['th_id'] as int?,
+      val: json['val'] as int?,
+      label: json['label'] as String?,
       th: json['th'] as String?,
     );
 
 Map<String, dynamic> _$TahunToJson(Tahun instance) => <String, dynamic>{
       'th_id': instance.th_id,
+      'val': instance.val,
+      'label': instance.label,
       'th': instance.th,
     };
 
@@ -85,8 +97,11 @@ Map<String, dynamic> _$UnitToJson(Unit instance) => <String, dynamic>{
     };
 
 Var _$VarFromJson(Map<String, dynamic> json) => Var(
-      var_id: json['var_id'] as int,
-      title: json['title'] as String,
+      val: json['val'] as int?,
+      label: json['label'] as String?,
+      subj: json['subj'] as String?,
+      var_id: json['var_id'] as int?,
+      title: json['title'] as String?,
       sub_id: json['sub_id'] as int?,
       sub_name: json['sub_name'] as String?,
       def: json['def'] as String?,
@@ -98,6 +113,9 @@ Var _$VarFromJson(Map<String, dynamic> json) => Var(
     );
 
 Map<String, dynamic> _$VarToJson(Var instance) => <String, dynamic>{
+      'val': instance.val,
+      'label': instance.label,
+      'subj': instance.subj,
       'var_id': instance.var_id,
       'title': instance.title,
       'sub_id': instance.sub_id,
