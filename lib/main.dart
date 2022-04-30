@@ -1,12 +1,13 @@
-import 'package:cirebon_onstats/model/publikasi/publikasi_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:cirebon_onstats/firebase_options.dart';
 
 import 'screens/pages.dart';
 
-import 'package:cirebon_onstats/firebase_options.dart';
-import 'package:cirebon_onstats/model/berita/berita_viewmodel.dart';
+import 'model/statistik/statistik_viewmodel.dart';
+import 'model/berita/berita_viewmodel.dart';
+import 'model/publikasi/publikasi_viewmodel.dart';
 import 'model/brs/brs_viewmodel.dart';
 
 void main() async {
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => BeritaViewModel()),
         ChangeNotifierProvider(create: (_) => BRSViewModel()),
         ChangeNotifierProvider(create: (_) => PublikasiViewModel()),
+        ChangeNotifierProvider(create: (_) => StatistikViewModel()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -42,6 +44,7 @@ class MyApp extends StatelessWidget {
           '/brsDetail': (context) => const BRSDetailScreen(),
           '/publikasi': (context) => const PublikasiScreen(),
           '/publikasiDetail': (context) => const PublikasiDetailScreen(),
+          '/sosdukSubject': (context) => const SosDukSubjectScreen(),
         },
       ),
     );

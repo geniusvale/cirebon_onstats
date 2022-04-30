@@ -5,9 +5,11 @@ class ImageCard extends StatelessWidget {
   final Color warnaKiri, warnaKanan;
   final String title;
   final String logo;
+  final String routeName;
 
-  ImageCard(
+  const ImageCard(
       {Key? key,
+      required this.routeName,
       required this.warnaKiri,
       required this.warnaKanan,
       required this.title,
@@ -16,31 +18,34 @@ class ImageCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 312,
-      height: 80,
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5),
-        gradient: LinearGradient(
-            begin: Alignment.centerLeft,
-            end: Alignment.centerRight,
-            colors: [warnaKiri, warnaKanan]),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Expanded(child: Image.asset(logo)),
-          Expanded(
-            child: Text(title,
-                style: TextStyle(
-                    fontFamily: 'Poppins',
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white)),
-          ),
-        ],
+    return GestureDetector(
+      onTap: () => Navigator.pushNamed(context, routeName),
+      child: Container(
+        width: 312,
+        height: 80,
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5),
+          gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              colors: [warnaKiri, warnaKanan]),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(child: Image.asset(logo)),
+            Expanded(
+              child: Text(title,
+                  style: const TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white)),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -94,25 +94,28 @@ class _BerandaState extends State<Beranda> {
                 ),
               ),
               const SizedBox(height: 8),
-              ImageCard(
+              const ImageCard(
+                routeName: '/sosdukSubject',
                 title: 'Sosial dan Kependudukan',
                 logo: 'assets/images/sosduk-logo.png',
-                warnaKiri: const Color(0xFF128EDB),
-                warnaKanan: const Color(0xFF043277),
+                warnaKiri: Color(0xFF128EDB),
+                warnaKanan: Color(0xFF043277),
               ),
               const SizedBox(height: 25),
-              ImageCard(
+              const ImageCard(
+                routeName: '',
                 title: 'Ekonomi dan Perdagangan',
                 logo: 'assets/images/ekoper-logo.png',
-                warnaKiri: const Color(0xFFEC8611),
-                warnaKanan: const Color(0xFFDC7418),
+                warnaKiri: Color(0xFFEC8611),
+                warnaKanan: Color(0xFFDC7418),
               ),
               const SizedBox(height: 25),
-              ImageCard(
+              const ImageCard(
+                routeName: '',
                 title: 'Pertanian dan Pertambangan',
                 logo: 'assets/images/pertani-logo.png',
-                warnaKiri: const Color(0xFF00CC83),
-                warnaKanan: const Color(0xFF00A66A),
+                warnaKiri: Color(0xFF00CC83),
+                warnaKanan: Color(0xFF00A66A),
               ),
             ],
           ),

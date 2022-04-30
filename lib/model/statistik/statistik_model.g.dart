@@ -85,8 +85,8 @@ Map<String, dynamic> _$UnitToJson(Unit instance) => <String, dynamic>{
     };
 
 Var _$VarFromJson(Map<String, dynamic> json) => Var(
-      var_id: json['var_id'] as int?,
-      title: json['title'] as String?,
+      var_id: json['var_id'] as int,
+      title: json['title'] as String,
       sub_id: json['sub_id'] as int?,
       sub_name: json['sub_name'] as String?,
       def: json['def'] as String?,
@@ -124,4 +124,20 @@ Map<String, dynamic> _$VerVarToJson(VerVar instance) => <String, dynamic>{
       'item_ver_id': instance.item_ver_id,
       'group_ver_id': instance.group_ver_id,
       'name_group_ver_id': instance.name_group_ver_id,
+    };
+
+Subject _$SubjectFromJson(Map<String, dynamic> json) => Subject(
+      sub_id: json['sub_id'] as int,
+      title: json['title'] as String,
+      subcat_id: json['subcat_id'] as int?,
+      subcat: json['subcat'] as String?,
+      ntabel: json['ntabel'],
+    );
+
+Map<String, dynamic> _$SubjectToJson(Subject instance) => <String, dynamic>{
+      'sub_id': instance.sub_id,
+      'title': instance.title,
+      'subcat_id': instance.subcat_id,
+      'subcat': instance.subcat,
+      'ntabel': instance.ntabel,
     };

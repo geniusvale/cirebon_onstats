@@ -40,26 +40,27 @@ class DrawerKu extends StatelessWidget {
               routeName: '/',
             ),
             const SizedBox(height: 8),
-            const ExpansionTile(
-                title: Text('Statistik'),
+            ExpansionTile(
+                title: const Text('Statistik'),
                 textColor: Colors.white,
                 collapsedTextColor: Colors.white,
                 iconColor: Colors.white,
                 collapsedIconColor: Colors.white,
                 children: [
                   ListTile(
-                    title: Text(
+                    onTap: () => Navigator.pushNamed(context, '/sosdukSubject'),
+                    title: const Text(
                       'Sosial dan Kependudukan',
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
-                  ListTile(
+                  const ListTile(
                     title: Text(
                       'Ekonomi dan Perdagangan',
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
-                  ListTile(
+                  const ListTile(
                     title: Text(
                       'Pertanian dan Pertambangan',
                       style: TextStyle(color: Colors.white),

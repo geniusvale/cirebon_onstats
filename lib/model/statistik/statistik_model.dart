@@ -89,8 +89,8 @@ class Unit {
 
 @JsonSerializable()
 class Var {
-  int? var_id;
-  String? title;
+  int var_id;
+  String title;
   int? sub_id;
   String? sub_name;
   String? def;
@@ -101,8 +101,8 @@ class Var {
   String? graph_name;
 
   Var(
-      {this.var_id,
-      this.title,
+      {required this.var_id,
+      required this.title,
       this.sub_id,
       this.sub_name,
       this.def,
@@ -135,4 +135,19 @@ class VerVar {
   factory VerVar.fromJson(Map<String, dynamic> json) => _$VerVarFromJson(json);
 
   Map<String, dynamic> toJson() => _$VerVarToJson(this);
+}
+
+@JsonSerializable()
+class Subject {
+  int sub_id;
+  String title;
+  int? subcat_id;
+  String? subcat;
+  var ntabel;
+
+  Subject({required this.sub_id, required this.title, this.subcat_id, this.subcat, this.ntabel});
+
+  factory Subject.fromJson(Map<String, dynamic> json) => _$SubjectFromJson(json);
+
+  Map<String, dynamic> toJson() => _$SubjectToJson(this);
 }
