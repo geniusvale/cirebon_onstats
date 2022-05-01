@@ -18,7 +18,6 @@ class _SosDukDataScreenState extends State<SosDukDataScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(''),
-        backgroundColor: const Color(0xFF043277),
       ),
       body: FutureBuilder(
         future: data.getStatsData(varId),
@@ -28,6 +27,7 @@ class _SosDukDataScreenState extends State<SosDukDataScreen> {
             return const Center(child: CircularProgressIndicator());
           }
           return ListTile(
+            textColor: Colors.white,
             title: Text(data.statsData.labelvervar.toString()),
           );
         },

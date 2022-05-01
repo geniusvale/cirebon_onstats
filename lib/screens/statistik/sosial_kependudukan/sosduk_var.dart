@@ -18,7 +18,6 @@ class _SosDukVariableScreenState extends State<SosDukVariableScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(''),
-        backgroundColor: const Color(0xFF043277),
       ),
       body: FutureBuilder(
         future: listVar.getAllVariable(subId),
@@ -27,6 +26,7 @@ class _SosDukVariableScreenState extends State<SosDukVariableScreen> {
             itemCount: listVar.listVariable.length,
             itemBuilder: (context, index) {
               return ListTile(
+                textColor: Colors.white,
                 onTap: () => Navigator.pushNamed(context, '/sosdukData',
                     arguments: listVar.listVariable[index].var_id),
                 title: Text(listVar.listVariable[index].title!),

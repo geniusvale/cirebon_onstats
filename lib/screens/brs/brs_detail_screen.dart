@@ -17,10 +17,8 @@ class _BRSDetailScreenState extends State<BRSDetailScreen> {
     final id = ModalRoute.of(context)!.settings.arguments as int;
 
     return Scaffold(
-      backgroundColor: const Color(0xFF043277),
       appBar: AppBar(
         title: const Text('Detail BRS'),
-        backgroundColor: const Color(0xFF043277),
       ),
       body: FutureBuilder(
         future: brsData.getBRSDetail(id),

@@ -1,7 +1,6 @@
 import 'package:cirebon_onstats/model/statistik/statistik_viewmodel.dart';
 import 'package:cirebon_onstats/widgets/carousel_hero.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import '../widgets/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,13 +15,8 @@ class _BerandaState extends State<Beranda> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF043277),
       drawer: const DrawerKu(),
       appBar: AppBar(
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Color(0xFF043277),
-        ),
-        backgroundColor: const Color(0xFF043277),
         centerTitle: true,
         actions: [
           IconButton(

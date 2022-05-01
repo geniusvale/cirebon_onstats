@@ -17,10 +17,8 @@ class _BeritaDetailScreenState extends State<BeritaDetailScreen> {
     var beritaData = Provider.of<BeritaViewModel>(context, listen: false);
     final id = ModalRoute.of(context)!.settings.arguments as int;
     return Scaffold(
-      backgroundColor: const Color(0xFF043277),
       appBar: AppBar(
         title: const Text('Detail Berita'),
-        backgroundColor: const Color(0xFF043277),
       ),
       body: FutureBuilder(
         future: beritaData.getBeritaDetail(id),

@@ -11,10 +11,8 @@ class _AddLokalDataScreenState extends State<AddLokalDataScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF043277),
       appBar: AppBar(
         title: const Text('Tambah Data Statistik Lokal'),
-        backgroundColor: const Color(0xFF043277),
       ),
       body: Column(
         children: [

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cirebon_onstats/firebase_options.dart';
@@ -31,6 +32,22 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => StatistikViewModel()),
       ],
       child: MaterialApp(
+        theme: ThemeData(
+          appBarTheme: const AppBarTheme(
+            systemOverlayStyle: SystemUiOverlayStyle(
+              statusBarColor: Color(0xFF043277),
+            ),
+            backgroundColor: Color(0xFF043277),
+          ),
+          scaffoldBackgroundColor: const Color(0xFF043277),
+          primaryColor: const Color(0xFF043277),
+          fontFamily: 'Poppins',
+          textTheme: const TextTheme().copyWith(
+            bodyText1: const TextStyle(color: Colors.white),
+          ),
+          listTileTheme: const ListTileThemeData(textColor: Colors.black),
+          iconTheme: const IconThemeData(color: Colors.white),
+        ),
         debugShowCheckedModeBanner: false,
         title: 'Cirebon OnStats',
         initialRoute: '/',

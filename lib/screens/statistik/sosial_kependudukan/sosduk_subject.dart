@@ -16,7 +16,6 @@ class _SosDukSubjectScreenState extends State<SosDukSubjectScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Sosial dan Kependudukan'),
-        backgroundColor: const Color(0xFF043277),
       ),
       body: FutureBuilder(
         future: listSubject.getAllSubject(1),
@@ -25,6 +24,7 @@ class _SosDukSubjectScreenState extends State<SosDukSubjectScreen> {
             itemCount: listSubject.subject.length,
             itemBuilder: (context, index) {
               return ListTile(
+                textColor: Colors.white,
                 onTap: () => Navigator.pushNamed(context, '/sosdukVariable',
                     arguments: listSubject.subject[index].sub_id),
                 title: Text(listSubject.subject[index].title),

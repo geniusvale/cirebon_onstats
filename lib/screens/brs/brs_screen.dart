@@ -47,10 +47,8 @@ class _BRSScreenState extends State<BRSScreen> {
   Widget build(BuildContext context) {
     var brsData = Provider.of<BRSViewModel>(context);
     return Scaffold(
-      backgroundColor: const Color(0xFF043277),
       appBar: AppBar(
         title: const Text('Berita Resmi Statistik'),
-        backgroundColor: const Color(0xFF043277),
       ),
       body: FutureBuilder(
         future: brsData.getAllBRS(initPage),

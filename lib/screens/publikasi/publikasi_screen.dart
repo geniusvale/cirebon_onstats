@@ -49,10 +49,8 @@ class _PublikasiScreenState extends State<PublikasiScreen> {
   Widget build(BuildContext context) {
     var publikasiData = Provider.of<PublikasiViewModel>(context);
     return Scaffold(
-      backgroundColor: const Color(0xFF043277),
       appBar: AppBar(
         title: const Text('Publikasi'),
-        backgroundColor: const Color(0xFF043277),
       ),
       body: FutureBuilder(
         future: publikasiData.getAllPublikasi(initPage),

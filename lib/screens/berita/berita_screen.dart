@@ -15,15 +15,14 @@ class _BeritaScreenState extends State<BeritaScreen> {
     var beritaData = Provider.of<BeritaViewModel>(context);
 
     return Scaffold(
-      backgroundColor: const Color(0xFF043277),
       appBar: AppBar(
         title: const Text('Berita'),
-        backgroundColor: const Color(0xFF043277),
       ),
       body: FutureBuilder(
         future: beritaData.getAllBerita(),
         builder: (context, snapshot) {
           return ListView.builder(
+            padding: const EdgeInsets.all(8.0),
             itemCount: beritaData.berita.length,
             itemBuilder: (context, index) {
               return Card(
@@ -32,9 +31,6 @@ class _BeritaScreenState extends State<BeritaScreen> {
                     Navigator.pushNamed(context, '/beritaDetail',
                         arguments: beritaData.berita[index].news_id);
                   },
-                  leading: CircleAvatar(
-                    child: Text('${beritaData.berita[index].news_id}'),
-                  ),
                   title: Text(beritaData.berita[index].title),
                   subtitle: Text(beritaData.berita[index].newscat_name!),
                   trailing: const Icon(Icons.chevron_right_outlined),

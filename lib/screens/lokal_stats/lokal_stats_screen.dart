@@ -11,10 +11,8 @@ class _LokalStatsScreenState extends State<LokalStatsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF043277),
       appBar: AppBar(
         title: const Text('Data Statistik Lokal'),
-        backgroundColor: const Color(0xFF043277),
         actions: [
           IconButton(
               onPressed: () => Navigator.pushNamed(context, '/addLokalData'),
