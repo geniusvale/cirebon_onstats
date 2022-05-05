@@ -43,21 +43,19 @@ class _AddStatsWidgetState extends State<AddStatsWidget> {
             child: TextFormField(
               controller: judul,
               style: const TextStyle(color: Colors.white),
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: 'Masukkan Judul - E.g "Total Kecamatan"',
-                hintStyle: const TextStyle(color: Colors.grey),
+                hintStyle: TextStyle(color: Colors.grey),
                 labelText: 'Judul',
-                labelStyle: const TextStyle(color: Colors.white),
+                labelStyle: TextStyle(color: Colors.white),
                 fillColor: Colors.white,
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(25.0),
-                  borderSide: const BorderSide(
+                  borderSide: BorderSide(
                     color: Colors.white,
                   ),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(25.0),
-                  borderSide: const BorderSide(
+                  borderSide: BorderSide(
                     color: Colors.white,
                     width: 1.0,
                   ),
@@ -71,21 +69,19 @@ class _AddStatsWidgetState extends State<AddStatsWidget> {
             child: TextFormField(
               controller: tahun,
               style: const TextStyle(color: Colors.white),
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: 'Masukkan Tahun',
-                hintStyle: const TextStyle(color: Colors.grey),
+                hintStyle: TextStyle(color: Colors.grey),
                 labelText: 'Tahun',
-                labelStyle: const TextStyle(color: Colors.white),
+                labelStyle: TextStyle(color: Colors.white),
                 fillColor: Colors.white,
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(25.0),
-                  borderSide: const BorderSide(
+                  borderSide: BorderSide(
                     color: Colors.white,
                   ),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(25.0),
-                  borderSide: const BorderSide(
+                  borderSide: BorderSide(
                     color: Colors.white,
                     width: 1.0,
                   ),
@@ -99,21 +95,19 @@ class _AddStatsWidgetState extends State<AddStatsWidget> {
             child: TextFormField(
               controller: nilai,
               style: const TextStyle(color: Colors.white),
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: 'Masukkan Nilai',
-                hintStyle: const TextStyle(color: Colors.grey),
+                hintStyle: TextStyle(color: Colors.grey),
                 labelText: 'Nilai',
-                labelStyle: const TextStyle(color: Colors.white),
+                labelStyle: TextStyle(color: Colors.white),
                 fillColor: Colors.white,
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(25.0),
-                  borderSide: const BorderSide(
+                  borderSide: BorderSide(
                     color: Colors.white,
                   ),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(25.0),
-                  borderSide: const BorderSide(
+                  borderSide: BorderSide(
                     color: Colors.white,
                     width: 1.0,
                   ),
