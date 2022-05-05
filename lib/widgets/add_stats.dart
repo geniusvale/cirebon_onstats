@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -9,8 +10,23 @@ class AddStatsWidget extends StatefulWidget {
 }
 
 class _AddStatsWidgetState extends State<AddStatsWidget> {
+  final TextEditingController judul = TextEditingController();
+  final TextEditingController tahun = TextEditingController();
+  final TextEditingController nilai = TextEditingController();
+
+  @override
+  void dispose() {
+    judul.dispose();
+    tahun.dispose();
+    nilai.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
+    FirebaseFirestore firestore = FirebaseFirestore.instance;
+    CollectionReference localstats = firestore.collection('localstats');
+
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () => FirebaseAuth.instance.signOut(),
@@ -25,6 +41,7 @@ class _AddStatsWidgetState extends State<AddStatsWidget> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
+              controller: judul,
               style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 hintText: 'Masukkan Judul - E.g "Total Kecamatan"',
@@ -52,6 +69,7 @@ class _AddStatsWidgetState extends State<AddStatsWidget> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
+              controller: tahun,
               style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 hintText: 'Masukkan Tahun',
@@ -79,6 +97,7 @@ class _AddStatsWidgetState extends State<AddStatsWidget> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
+              controller: nilai,
               style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 hintText: 'Masukkan Nilai',
@@ -103,7 +122,16 @@ class _AddStatsWidgetState extends State<AddStatsWidget> {
             ),
           ),
           const SizedBox(height: 12),
-          ElevatedButton(onPressed: () {}, child: const Text('Simpan'))
+          ElevatedButton(
+              onPressed: () {
+                localstats.add({
+                  'judul': judul.text,
+                  'tahun': tahun.text,
+                  'nilai': nilai.text,
+                });
+                Navigator.pop(context);
+              },
+              child: const Text('Simpan'))
         ],
       ),
     );
