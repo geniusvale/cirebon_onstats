@@ -15,6 +15,7 @@ class _SosDukDataScreenState extends State<SosDukDataScreen> {
   Widget build(BuildContext context) {
     var data = Provider.of<StatistikViewModel>(context, listen: false);
     final varId = ModalRoute.of(context)!.settings.arguments as int;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(''),
@@ -26,9 +27,13 @@ class _SosDukDataScreenState extends State<SosDukDataScreen> {
               !snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());
           }
-          return ListTile(
-            textColor: Colors.white,
-            title: Text(data.statsData.labelvervar.toString()),
+          return SingleChildScrollView(
+            child: Column(
+              children: [
+                Text(data.statsData.dataVar[0].val.toString()),
+                Text(data.statsData.dataVar[0].subj.toString()),
+              ],
+            ),
           );
         },
       ),

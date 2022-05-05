@@ -35,7 +35,7 @@ class StatistikAPI {
   Future<Data> fetchStatsData(int varId) async {
     Response response = await Dio().get(
         'https://webapi.bps.go.id/v1/api/list/model/data/domain/3274/var/$varId/key/841396623eaa7ad43906a4a64c96e7a1/');
-        
+
     return Data.fromJson(response.data);
   }
 }

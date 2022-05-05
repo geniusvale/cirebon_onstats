@@ -1,3 +1,4 @@
+import 'package:cirebon_onstats/screens/auth/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final navigatorKey = GlobalKey<NavigatorState>();
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => BeritaViewModel()),
@@ -32,6 +34,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => StatistikViewModel()),
       ],
       child: MaterialApp(
+        navigatorKey: navigatorKey,
         theme: ThemeData(
           appBarTheme: const AppBarTheme(
             systemOverlayStyle: SystemUiOverlayStyle(
@@ -53,6 +56,7 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (context) => const Beranda(),
+          '/login': (context) => LoginScreen(),
           '/lokalStatsScreen': (context) => const LokalStatsScreen(),
           '/addLokalData': (context) => const AddLokalDataScreen(),
           '/berita': (context) => const BeritaScreen(),

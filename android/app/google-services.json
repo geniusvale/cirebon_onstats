@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "697004633636-211fbbb1ah3pu8bnn5vc4o743snor7il.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bps.cirebon_onstats",
+            "certificate_hash": "f8a12227a8f2c46b6d8fea44271812020ee5f4bf"
+          }
+        },
+        {
           "client_id": "697004633636-olcau96u8aggu0ftc79ep5rq2hj45fnh.apps.googleusercontent.com",
           "client_type": 3
         }

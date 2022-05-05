@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class LokalStatsScreen extends StatefulWidget {
@@ -10,6 +11,7 @@ class LokalStatsScreen extends StatefulWidget {
 class _LokalStatsScreenState extends State<LokalStatsScreen> {
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Data Statistik Lokal'),
@@ -19,7 +21,9 @@ class _LokalStatsScreenState extends State<LokalStatsScreen> {
               icon: const Icon(Icons.admin_panel_settings_outlined))
         ],
       ),
-      body: null,
+      body: Center(
+        child: Text(user.toString()),
+      ),
     );
   }
 }

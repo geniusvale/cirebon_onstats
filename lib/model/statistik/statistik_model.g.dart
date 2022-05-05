@@ -105,7 +105,7 @@ Var _$VarFromJson(Map<String, dynamic> json) => Var(
       sub_id: json['sub_id'] as int?,
       sub_name: json['sub_name'] as String?,
       def: json['def'] as String?,
-      notes: json['notes'] as String?,
+      note: json['note'] as String?,
       vertical: json['vertical'] as int?,
       unit: json['unit'] as String?,
       graph_id: json['graph_id'] as int?,
@@ -121,7 +121,7 @@ Map<String, dynamic> _$VarToJson(Var instance) => <String, dynamic>{
       'sub_id': instance.sub_id,
       'sub_name': instance.sub_name,
       'def': instance.def,
-      'notes': instance.notes,
+      'note': instance.note,
       'vertical': instance.vertical,
       'unit': instance.unit,
       'graph_id': instance.graph_id,
@@ -134,6 +134,8 @@ VerVar _$VerVarFromJson(Map<String, dynamic> json) => VerVar(
       item_ver_id: json['item_ver_id'] as int?,
       group_ver_id: json['group_ver_id'] as int?,
       name_group_ver_id: json['name_group_ver_id'] as String?,
+      val: json['val'] as int?,
+      label: json['label'] as String?,
     );
 
 Map<String, dynamic> _$VerVarToJson(VerVar instance) => <String, dynamic>{
@@ -142,6 +144,8 @@ Map<String, dynamic> _$VerVarToJson(VerVar instance) => <String, dynamic>{
       'item_ver_id': instance.item_ver_id,
       'group_ver_id': instance.group_ver_id,
       'name_group_ver_id': instance.name_group_ver_id,
+      'val': instance.val,
+      'label': instance.label,
     };
 
 Subject _$SubjectFromJson(Map<String, dynamic> json) => Subject(

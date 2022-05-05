@@ -107,7 +107,7 @@ class Var {
   int? sub_id;
   String? sub_name;
   String? def;
-  String? notes;
+  String? note;
   int? vertical;
   String? unit;
   int? graph_id;
@@ -122,7 +122,7 @@ class Var {
       this.sub_id,
       this.sub_name,
       this.def,
-      this.notes,
+      this.note,
       this.vertical,
       this.unit,
       this.graph_id,
@@ -140,13 +140,17 @@ class VerVar {
   int? item_ver_id;
   int? group_ver_id;
   String? name_group_ver_id;
+  int? val;
+  String? label;
 
   VerVar(
       {this.kode_ver_id,
       this.vervar,
       this.item_ver_id,
       this.group_ver_id,
-      this.name_group_ver_id});
+      this.name_group_ver_id,
+      this.val,
+      this.label});
 
   factory VerVar.fromJson(Map<String, dynamic> json) => _$VerVarFromJson(json);
 
