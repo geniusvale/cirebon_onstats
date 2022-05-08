@@ -84,13 +84,14 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 20),
               ElevatedButton(
-                  onPressed: signIn,
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(
-                      const Color(0xFF043277),
-                    ),
+                onPressed: signIn,
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(
+                    const Color(0xFF043277),
                   ),
-                  child: const Text('Login')),
+                ),
+                child: const Text('Login'),
+              ),
             ],
           ),
         ),
