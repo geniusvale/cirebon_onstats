@@ -100,8 +100,46 @@ class DrawerKu extends StatelessWidget {
             const SizedBox(height: 8),
             const ListMenuDrawer(
               icon: Icons.info_outlined,
-              title: 'Tentang Kami',
+              title: 'Tentang BPS',
               routeName: '/tentang',
+            ),
+            const SizedBox(height: 50),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: const [
+                Text(
+                  'Badan Pusat Statistik Kota Cirebon\n',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                Text(
+                  'Jl. Sekar Kemuning I Evakuasi, Cirebon 45136 Jawa Barat - Indonesia',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  'E-Mail: bps3274@bps.go.id',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                Text(
+                  'Telp: +62 231 485524, Fax: +62 231 484403\n',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                Text(
+                  'Hak Cipta © 2022 Badan Pusat Statistik\nSemua Hak Dilindungi\n',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+              ],
             ),
           ],
         ),
