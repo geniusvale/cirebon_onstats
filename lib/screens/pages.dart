@@ -1,5 +1,7 @@
 export 'beranda.dart';
 
+export './tentang/tentang_screen.dart';
+
 export 'lokal_stats/lokal_stats_screen.dart';
 export 'lokal_stats/add_lokal_data_screen.dart';
 

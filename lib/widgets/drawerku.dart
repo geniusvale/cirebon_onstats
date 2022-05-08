@@ -101,7 +101,7 @@ class DrawerKu extends StatelessWidget {
             const ListMenuDrawer(
               icon: Icons.info_outlined,
               title: 'Tentang Kami',
-              routeName: '',
+              routeName: '/tentang',
             ),
           ],
         ),

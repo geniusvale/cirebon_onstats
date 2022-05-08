@@ -59,6 +59,7 @@ class MyApp extends StatelessWidget {
           '/login': (context) => LoginScreen(),
           '/lokalStatsScreen': (context) => const LokalStatsScreen(),
           '/addLokalData': (context) => const AddLokalDataScreen(),
+          '/tentang': (context) => const TentangScreen(),
           '/berita': (context) => const BeritaScreen(),
           '/beritaDetail': (context) => const BeritaDetailScreen(),
           '/brs': (context) => const BRSScreen(),
