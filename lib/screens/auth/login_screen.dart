@@ -45,7 +45,13 @@ class _LoginScreenState extends State<LoginScreen> {
           height: 300,
           child: Column(
             children: [
-              const SizedBox(height: 40),
+              const SizedBox(height: 20),
+              Image.asset(
+                'assets/images/bps-icon.png',
+                width: 40,
+                height: 40,
+              ),
+              const SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: TextField(
@@ -76,8 +82,15 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 8),
-              ElevatedButton(onPressed: signIn, child: const Text('Login')),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                  onPressed: signIn,
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                      const Color(0xFF043277),
+                    ),
+                  ),
+                  child: const Text('Login')),
             ],
           ),
         ),
