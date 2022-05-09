@@ -100,7 +100,7 @@ class _BerandaState extends State<Beranda> {
               ),
               const SizedBox(height: 25),
               const ImageCard(
-                routeName: '',
+                routeName: '/ekoperdagSubject',
                 title: 'Ekonomi dan Perdagangan',
                 logo: 'assets/images/ekoper-logo.png',
                 warnaKiri: Color(0xFFEC8611),
@@ -108,7 +108,7 @@ class _BerandaState extends State<Beranda> {
               ),
               const SizedBox(height: 25),
               const ImageCard(
-                routeName: '',
+                routeName: '/pertanpertamSubject',
                 title: 'Pertanian dan Pertambangan',
                 logo: 'assets/images/pertani-logo.png',
                 warnaKiri: Color(0xFF00CC83),

@@ -69,6 +69,12 @@ class MyApp extends StatelessWidget {
           '/sosdukSubject': (context) => const SosDukSubjectScreen(),
           '/sosdukVariable': (context) => const SosDukVariableScreen(),
           '/sosdukData': (context) => const SosDukDataScreen(),
+          '/ekoperdagSubject': (context) => const EkoPerdagSubjectScreen(),
+          '/ekoperdagVariable': (context) => const EkoPerdagVariableScreen(),
+          '/ekoperdagData': (context) => const EkoPerdagDataScreen(),
+          '/pertanpertamSubject': (context) => const PertanPertamSubjectScreen(),
+          '/pertanpertamVariable': (context) => const PertanPertamVariableScreen(),
+          '/pertanpertamData': (context) => const PertanPertamDataScreen(),
         },
       ),
     );

@@ -54,14 +54,18 @@ class DrawerKu extends StatelessWidget {
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
-                  const ListTile(
-                    title: Text(
+                  ListTile(
+                    onTap: () =>
+                        Navigator.pushNamed(context, '/ekoperdagSubject'),
+                    title: const Text(
                       'Ekonomi dan Perdagangan',
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
-                  const ListTile(
-                    title: Text(
+                  ListTile(
+                    onTap: () =>
+                        Navigator.pushNamed(context, '/pertanpertamSubject'),
+                    title: const Text(
                       'Pertanian dan Pertambangan',
                       style: TextStyle(color: Colors.white),
                     ),
