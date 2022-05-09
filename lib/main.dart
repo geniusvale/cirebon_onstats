@@ -11,6 +11,7 @@ import 'model/statistik/statistik_viewmodel.dart';
 import 'model/berita/berita_viewmodel.dart';
 import 'model/publikasi/publikasi_viewmodel.dart';
 import 'model/brs/brs_viewmodel.dart';
+import 'model/infografis/infografis_viewmodel.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => BRSViewModel()),
         ChangeNotifierProvider(create: (_) => PublikasiViewModel()),
         ChangeNotifierProvider(create: (_) => StatistikViewModel()),
+        ChangeNotifierProvider(create: (_) => InfografisViewModel()),
       ],
       child: MaterialApp(
         // navigatorKey: navigatorKey,
@@ -57,6 +59,7 @@ class MyApp extends StatelessWidget {
         routes: {
           '/': (context) => const Beranda(),
           '/login': (context) => LoginScreen(),
+          '/infografisScreen': (context) => InfografisScreen(),
           '/lokalStatsScreen': (context) => const LokalStatsScreen(),
           '/addLokalData': (context) => const AddLokalDataScreen(),
           '/tentang': (context) => const TentangScreen(),
