@@ -81,7 +81,7 @@ class _BerandaState extends State<Beranda> {
                 width: double.infinity,
                 margin: const EdgeInsets.symmetric(horizontal: 20),
                 child: Text(
-                  'Tabel Statistik Publik',
+                  'Data Statistik Publik',
                   style: GoogleFonts.poppins(
                     textStyle: const TextStyle(
                         color: Colors.white,
