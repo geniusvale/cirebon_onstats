@@ -52,6 +52,8 @@ class MyApp extends StatelessWidget {
           ),
           listTileTheme: const ListTileThemeData(textColor: Colors.black),
           iconTheme: const IconThemeData(color: Colors.white),
+          progressIndicatorTheme: const ProgressIndicatorThemeData(
+              circularTrackColor: Colors.white),
         ),
         debugShowCheckedModeBanner: false,
         title: 'Cirebon OnStats',
@@ -59,7 +61,7 @@ class MyApp extends StatelessWidget {
         routes: {
           '/': (context) => const Beranda(),
           '/login': (context) => LoginScreen(),
-          '/infografisScreen': (context) => InfografisScreen(),
+          '/infografisScreen': (context) => const InfografisScreen(),
           '/lokalStatsScreen': (context) => const LokalStatsScreen(),
           '/addLokalData': (context) => const AddLokalDataScreen(),
           '/tentang': (context) => const TentangScreen(),
@@ -75,8 +77,10 @@ class MyApp extends StatelessWidget {
           '/ekoperdagSubject': (context) => const EkoPerdagSubjectScreen(),
           '/ekoperdagVariable': (context) => const EkoPerdagVariableScreen(),
           '/ekoperdagData': (context) => const EkoPerdagDataScreen(),
-          '/pertanpertamSubject': (context) => const PertanPertamSubjectScreen(),
-          '/pertanpertamVariable': (context) => const PertanPertamVariableScreen(),
+          '/pertanpertamSubject': (context) =>
+              const PertanPertamSubjectScreen(),
+          '/pertanpertamVariable': (context) =>
+              const PertanPertamVariableScreen(),
           '/pertanpertamData': (context) => const PertanPertamDataScreen(),
         },
       ),
