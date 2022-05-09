@@ -93,7 +93,7 @@ class DrawerKu extends StatelessWidget {
             const ListMenuDrawer(
               icon: Icons.image_outlined,
               title: 'Infografis',
-              routeName: '',
+              routeName: '/infografisScreen',
             ),
             const SizedBox(height: 8),
             const ListMenuDrawer(
