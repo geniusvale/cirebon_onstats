@@ -21,7 +21,7 @@ class CarouselHero extends StatelessWidget {
           )),
         ),
         GestureDetector(
-          onTap: () => Navigator.pushNamed(context, '/statistik'),
+          onTap: () => Scaffold.of(context).openDrawer(),
           child: Card(
               child: Image.asset(
             'assets/images/data-statistik-hero.png',
@@ -29,7 +29,7 @@ class CarouselHero extends StatelessWidget {
           )),
         ),
         GestureDetector(
-          onTap: () => Navigator.pushNamed(context, '/infografis'),
+          onTap: () => Navigator.pushNamed(context, '/infografisScreen'),
           child: Card(
               child: Image.asset(
             'assets/images/infografis-hero.png',
