@@ -88,17 +88,24 @@ class _SosDukDataScreenState extends State<SosDukDataScreen> {
                         children: [
                           const Text('Val of Datacontent', style: headerStyle),
                           Container(
-                            width: 120,
-                            height: 120,
-                            color: Colors.white,
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.white),
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(5),
+                              ),
+                            ),
+                            width: 130,
+                            height: 130,
                             child: ListView.separated(
                               separatorBuilder: (context, index) =>
-                                  const Divider(thickness: 2),
+                                  const Divider(
+                                      thickness: 1, color: Colors.white),
                               itemCount: datacontentKey.length,
                               itemBuilder: (context, index) {
                                 return Center(
                                   child: Text(
                                     datacontentKey[index].toString(),
+                                    style: txtDefault,
                                   ),
                                 );
                               },
@@ -111,17 +118,26 @@ class _SosDukDataScreenState extends State<SosDukDataScreen> {
                           const Text('Nilai of Datacontent',
                               style: headerStyle),
                           Container(
-                            width: 120,
-                            height: 120,
-                            color: Colors.white,
+                            padding: const EdgeInsets.only(top: 8, bottom: 8),
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.white),
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(5),
+                              ),
+                            ),
+                            width: 130,
+                            height: 130,
                             child: ListView.separated(
                               separatorBuilder: (context, index) =>
-                                  const Divider(thickness: 2),
+                                  const Divider(
+                                      thickness: 1, color: Colors.white),
                               itemCount: datacontentValue.length,
                               itemBuilder: (context, index) {
                                 return Center(
-                                  child:
-                                      Text(datacontentValue[index].toString()),
+                                  child: Text(
+                                    datacontentValue[index].toString(),
+                                    style: txtDefault,
+                                  ),
                                 );
                               },
                             ),
@@ -138,18 +154,26 @@ class _SosDukDataScreenState extends State<SosDukDataScreen> {
                         children: [
                           const Text('Val of VerVar', style: headerStyle),
                           Container(
-                            width: 120,
-                            height: 120,
-                            color: Colors.white,
+                            padding: const EdgeInsets.only(top: 8, bottom: 8),
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.white),
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(5),
+                              ),
+                            ),
+                            width: 130,
+                            height: 130,
                             child: ListView.separated(
                               separatorBuilder: (context, index) =>
-                                  const Divider(thickness: 2),
+                                  const Divider(
+                                      thickness: 1, color: Colors.white),
                               itemCount: data.statsData.vervar!.length,
                               itemBuilder: (context, index) {
                                 return Center(
                                   child: Text(
                                     data.statsData.vervar![index].val
                                         .toString(),
+                                    style: txtDefault,
                                   ),
                                 );
                               },
@@ -161,17 +185,26 @@ class _SosDukDataScreenState extends State<SosDukDataScreen> {
                         children: [
                           const Text('Label of VerVar', style: headerStyle),
                           Container(
-                            width: 120,
-                            height: 120,
-                            color: Colors.white,
+                            padding: const EdgeInsets.only(top: 8, bottom: 8),
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.white),
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(5),
+                              ),
+                            ),
+                            width: 130,
+                            height: 130,
                             child: ListView.separated(
                               separatorBuilder: (context, index) =>
-                                  const Divider(thickness: 2),
+                                  const Divider(
+                                      thickness: 1, color: Colors.white),
                               itemCount: data.statsData.vervar!.length,
                               itemBuilder: (context, index) {
                                 return Center(
                                   child: Text(
-                                      data.statsData.vervar![index].label!),
+                                    data.statsData.vervar![index].label!,
+                                    style: txtDefault,
+                                  ),
                                 );
                               },
                             ),
@@ -188,17 +221,25 @@ class _SosDukDataScreenState extends State<SosDukDataScreen> {
                         children: [
                           const Text('Val of Tahun', style: headerStyle),
                           Container(
-                            width: 120,
-                            height: 120,
-                            color: Colors.white,
+                            padding: const EdgeInsets.only(top: 8, bottom: 8),
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.white),
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(5),
+                              ),
+                            ),
+                            width: 130,
+                            height: 130,
                             child: ListView.separated(
                               separatorBuilder: (context, index) =>
-                                  const Divider(thickness: 2),
+                                  const Divider(
+                                      thickness: 1, color: Colors.white),
                               itemCount: data.statsData.tahun!.length,
                               itemBuilder: (context, index) {
                                 return Center(
                                   child: Text(
                                     data.statsData.tahun![index].val.toString(),
+                                    style: txtDefault,
                                   ),
                                 );
                               },
@@ -210,17 +251,26 @@ class _SosDukDataScreenState extends State<SosDukDataScreen> {
                         children: [
                           const Text('Tahun', style: headerStyle),
                           Container(
-                            width: 120,
-                            height: 120,
-                            color: Colors.white,
+                            padding: const EdgeInsets.only(top: 8, bottom: 8),
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.white),
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(5),
+                              ),
+                            ),
+                            width: 130,
+                            height: 130,
                             child: ListView.separated(
                               separatorBuilder: (context, index) =>
-                                  const Divider(thickness: 2),
+                                  const Divider(
+                                      thickness: 1, color: Colors.white),
                               itemCount: data.statsData.tahun!.length,
                               itemBuilder: (context, index) {
                                 return Center(
-                                  child:
-                                      Text(data.statsData.tahun![index].label!),
+                                  child: Text(
+                                    data.statsData.tahun![index].label!,
+                                    style: txtDefault,
+                                  ),
                                 );
                               },
                             ),
@@ -237,18 +287,26 @@ class _SosDukDataScreenState extends State<SosDukDataScreen> {
                         children: [
                           const Text('Val of TurTahun', style: headerStyle),
                           Container(
-                            width: 120,
-                            height: 120,
-                            color: Colors.white,
+                            padding: const EdgeInsets.only(top: 8, bottom: 8),
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.white),
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(5),
+                              ),
+                            ),
+                            width: 130,
+                            height: 130,
                             child: ListView.separated(
                               separatorBuilder: (context, index) =>
-                                  const Divider(thickness: 2),
+                                  const Divider(
+                                      thickness: 1, color: Colors.white),
                               itemCount: data.statsData.turtahun!.length,
                               itemBuilder: (context, index) {
                                 return Center(
                                   child: Text(
                                     data.statsData.turtahun![index].val
                                         .toString(),
+                                    style: txtDefault,
                                   ),
                                 );
                               },
@@ -260,17 +318,26 @@ class _SosDukDataScreenState extends State<SosDukDataScreen> {
                         children: [
                           const Text('Label of TurTahun', style: headerStyle),
                           Container(
-                            width: 120,
-                            height: 120,
-                            color: Colors.white,
+                            padding: const EdgeInsets.only(top: 8, bottom: 8),
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.white),
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(5),
+                              ),
+                            ),
+                            width: 130,
+                            height: 130,
                             child: ListView.separated(
                               separatorBuilder: (context, index) =>
-                                  const Divider(thickness: 2),
+                                  const Divider(
+                                      thickness: 1, color: Colors.white),
                               itemCount: data.statsData.turtahun!.length,
                               itemBuilder: (context, index) {
                                 return Center(
                                   child: Text(
-                                      data.statsData.turtahun![index].label!),
+                                    data.statsData.turtahun![index].label!,
+                                    style: txtDefault,
+                                  ),
                                 );
                               },
                             ),
@@ -287,18 +354,26 @@ class _SosDukDataScreenState extends State<SosDukDataScreen> {
                         children: [
                           const Text('Val of TurVar', style: headerStyle),
                           Container(
-                            width: 120,
-                            height: 120,
-                            color: Colors.white,
+                            padding: const EdgeInsets.only(top: 8, bottom: 8),
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.white),
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(5),
+                              ),
+                            ),
+                            width: 130,
+                            height: 130,
                             child: ListView.separated(
                               separatorBuilder: (context, index) =>
-                                  const Divider(thickness: 2),
+                                  const Divider(
+                                      thickness: 1, color: Colors.white),
                               itemCount: data.statsData.turvar!.length,
                               itemBuilder: (context, index) {
                                 return Center(
                                   child: Text(
                                     data.statsData.turvar![index].val
                                         .toString(),
+                                    style: txtDefault,
                                   ),
                                 );
                               },
@@ -310,17 +385,27 @@ class _SosDukDataScreenState extends State<SosDukDataScreen> {
                         children: [
                           const Text('Label of TurVar', style: headerStyle),
                           Container(
-                            width: 120,
-                            height: 120,
-                            color: Colors.white,
+                            padding: const EdgeInsets.only(top: 8, bottom: 8),
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.white),
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(5),
+                              ),
+                            ),
+                            width: 130,
+                            height: 130,
                             child: ListView.separated(
                               separatorBuilder: (context, index) =>
-                                  const Divider(thickness: 2),
+                                  const Divider(
+                                      thickness: 1, color: Colors.white),
                               itemCount: data.statsData.turvar!.length,
                               itemBuilder: (context, index) {
                                 return Center(
                                   child: Text(
-                                      data.statsData.turvar![index].label!),
+                                    data.statsData.turvar![index].label!,
+                                    style: txtDefault,
+                                    textAlign: TextAlign.center,
+                                  ),
                                 );
                               },
                             ),
