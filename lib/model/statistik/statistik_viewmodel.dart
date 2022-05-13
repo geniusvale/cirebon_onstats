@@ -11,6 +11,8 @@ class StatistikViewModel with ChangeNotifier {
 
   late Data statsData;
 
+  late var statsJson;
+
   Future<List<Subject>> getAllSubject(int subCatId) async {
     final subject = await StatistikAPI().fecthAllSubject(subCatId);
     _subject = subject;
@@ -29,5 +31,11 @@ class StatistikViewModel with ChangeNotifier {
     statsData = await StatistikAPI().fetchStatsData(varId);
     notifyListeners();
     return statsData;
+  }
+
+  Future getStatsDataJson(int varId) async {
+    statsJson = await StatistikAPI().fetchStatsDataJson(varId);
+    notifyListeners();
+    return statsJson;
   }
 }

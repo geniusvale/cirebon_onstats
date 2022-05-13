@@ -44,13 +44,10 @@ dependencies:
   json_annotation: ^4.4.0
   build_runner: ^2.1.10
   flutter_html: ^2.2.1
-  xml: ^5.3.1
-  permission_handler: ^9.2.0
-  path_provider: ^2.0.9
-  json_table: ^2.0.1
   firebase_auth: ^3.3.17
   flutter_login: ^3.2.0
   cloud_firestore: ^3.1.14
+  page_transition: ^2.0.5
 
 dev_dependencies:
   flutter_test:
