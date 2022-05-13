@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cirebon_onstats/firebase_options.dart';
+import 'package:page_transition/page_transition.dart';
 
 import 'screens/pages.dart';
 
@@ -61,16 +62,16 @@ class MyApp extends StatelessWidget {
         routes: {
           '/': (context) => const Beranda(),
           '/login': (context) => LoginScreen(),
-          '/infografisScreen': (context) => const InfografisScreen(),
-          '/lokalStatsScreen': (context) => const LokalStatsScreen(),
+          // '/infografisScreen': (context) => const InfografisScreen(),
+          // '/lokalStatsScreen': (context) => const LokalStatsScreen(),
           '/addLokalData': (context) => const AddLokalDataScreen(),
-          '/tentang': (context) => const TentangScreen(),
+          // '/tentang': (context) => const TentangScreen(),
           '/berita': (context) => const BeritaScreen(),
-          '/beritaDetail': (context) => const BeritaDetailScreen(),
+          // '/beritaDetail': (context) => const BeritaDetailScreen(),
           '/brs': (context) => const BRSScreen(),
-          '/brsDetail': (context) => const BRSDetailScreen(),
+          // '/brsDetail': (context) => const BRSDetailScreen(),
           '/publikasi': (context) => const PublikasiScreen(),
-          '/publikasiDetail': (context) => const PublikasiDetailScreen(),
+          // '/publikasiDetail': (context) => const PublikasiDetailScreen(),
           '/sosdukSubject': (context) => const SosDukSubjectScreen(),
           '/sosdukVariable': (context) => const SosDukVariableScreen(),
           '/sosdukData': (context) => const SosDukDataScreen(),
@@ -82,6 +83,54 @@ class MyApp extends StatelessWidget {
           '/pertanpertamVariable': (context) =>
               const PertanPertamVariableScreen(),
           '/pertanpertamData': (context) => const PertanPertamDataScreen(),
+        },
+        onGenerateRoute: (settings) {
+          switch (settings.name) {
+            case '/beritaDetail':
+              return PageTransition(
+                child: const BeritaDetailScreen(),
+                type: PageTransitionType.scale,
+                alignment: Alignment.topRight,
+                settings: settings,
+              );
+            case '/brsDetail':
+              return PageTransition(
+                child: const BRSDetailScreen(),
+                type: PageTransitionType.scale,
+                alignment: Alignment.topRight,
+                settings: settings,
+              );
+            case '/publikasiDetail':
+              return PageTransition(
+                child: const PublikasiDetailScreen(),
+                type: PageTransitionType.scale,
+                alignment: Alignment.topRight,
+                settings: settings,
+              );
+            case '/infografisScreen':
+              return PageTransition(
+                child: const InfografisScreen(),
+                type: PageTransitionType.scale,
+                alignment: Alignment.topRight,
+                settings: settings,
+              );
+            case '/lokalStatsScreen':
+              return PageTransition(
+                child: const LokalStatsScreen(),
+                type: PageTransitionType.scale,
+                alignment: Alignment.topRight,
+                settings: settings,
+              );
+            case '/tentang':
+              return PageTransition(
+                child: const TentangScreen(),
+                type: PageTransitionType.scale,
+                alignment: Alignment.topRight,
+                settings: settings,
+              );
+            default:
+              return null;
+          }
         },
       ),
     );
