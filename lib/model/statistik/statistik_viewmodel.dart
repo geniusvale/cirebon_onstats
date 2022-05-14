@@ -32,10 +32,4 @@ class StatistikViewModel with ChangeNotifier {
     notifyListeners();
     return statsData;
   }
-
-  Future getStatsDataJson(int varId) async {
-    statsJson = await StatistikAPI().fetchStatsDataJson(varId);
-    notifyListeners();
-    return statsJson;
-  }
 }
