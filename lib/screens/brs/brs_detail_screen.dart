@@ -1,8 +1,8 @@
 import 'package:cirebon_onstats/model/brs/brs_viewmodel.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
 import 'package:cirebon_onstats/api/download.dart';
+import 'package:simple_html_css/simple_html_css.dart';
 
 class BRSDetailScreen extends StatefulWidget {
   const BRSDetailScreen({Key? key}) : super(key: key);
@@ -28,46 +28,56 @@ class _BRSDetailScreenState extends State<BRSDetailScreen> {
               !snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());
           }
-          return SingleChildScrollView(
+          return ListView(
             padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 8),
-                Text(
-                  brsData.brsDetail.title,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 8),
+                  Text(
+                    brsData.brsDetail.title,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
                   ),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  'Jadwal Rilis : ' + brsData.brsDetail.rl_date,
-                  style: const TextStyle(
-                    color: Colors.white,
+                  const SizedBox(height: 8),
+                  Text(
+                    'Jadwal Rilis : ' + brsData.brsDetail.rl_date,
+                    style: const TextStyle(
+                      color: Colors.white,
+                    ),
                   ),
-                ),
-                Text(
-                  'Ukuran File : ' + brsData.brsDetail.size!,
-                  style: const TextStyle(
-                    color: Colors.white,
+                  Text(
+                    'Ukuran File : ' + brsData.brsDetail.size!,
+                    style: const TextStyle(
+                      color: Colors.white,
+                    ),
                   ),
-                ),
-                TextButton.icon(
-                    onPressed: () => openFile(
-                        url: brsData.brsDetail.pdf!.toString(),
-                        fileName: '${brsData.brsDetail.title}.pdf'),
-                    icon: const Icon(Icons.download, color: Colors.white),
-                    label: const Text('Unduh',
-                        style: TextStyle(color: Colors.white))),
-                Html(
-                  data: brsData.brsDetail.abstract,
-                  style: {'body': Style(color: Colors.white)},
-                ),
-              ],
-            ),
+                  TextButton.icon(
+                      onPressed: () => openFile(
+                          url: brsData.brsDetail.pdf!.toString(),
+                          fileName: '${brsData.brsDetail.title}.pdf'),
+                      icon: const Icon(Icons.download, color: Colors.white),
+                      label: const Text('Unduh',
+                          style: TextStyle(color: Colors.white))),
+                  // Html(
+                  //   data: brsData.brsDetail.abstract!,
+                  //   style: {'body': Style(color: Colors.white)},
+                  // ),
+                  Container(
+                    padding: const EdgeInsets.all(8.0),
+                    child: HTML.toRichText(
+                      context,
+                      brsData.brsDetail.abstract!,
+                      defaultTextStyle: const TextStyle(color: Colors.white),
+                    ),
+                  )
+                ],
+              ),
+            ],
           );
         },
       ),
