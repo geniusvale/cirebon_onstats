@@ -21,6 +21,11 @@ class _BeritaScreenState extends State<BeritaScreen> {
       body: FutureBuilder(
         future: beritaData.getAllBerita(),
         builder: (context, snapshot) {
+          if (snapshot.connectionState != ConnectionState.done &&
+              !snapshot.hasData) {
+            return const Center(child: CircularProgressIndicator());
+          }
+
           return ListView.builder(
             padding: const EdgeInsets.all(8.0),
             itemCount: beritaData.berita.length,

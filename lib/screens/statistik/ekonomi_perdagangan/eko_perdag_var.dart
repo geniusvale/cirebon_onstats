@@ -7,7 +7,8 @@ class EkoPerdagVariableScreen extends StatefulWidget {
   const EkoPerdagVariableScreen({Key? key}) : super(key: key);
 
   @override
-  State<EkoPerdagVariableScreen> createState() => _EkoPerdagVariableScreenState();
+  State<EkoPerdagVariableScreen> createState() =>
+      _EkoPerdagVariableScreenState();
 }
 
 class _EkoPerdagVariableScreenState extends State<EkoPerdagVariableScreen> {
@@ -22,6 +23,11 @@ class _EkoPerdagVariableScreenState extends State<EkoPerdagVariableScreen> {
       body: FutureBuilder(
         future: listVar.getAllVariable(subId),
         builder: (context, snapshot) {
+          if (snapshot.connectionState != ConnectionState.done &&
+              !snapshot.hasData) {
+            return const Center(child: CircularProgressIndicator());
+          }
+
           return ListView.builder(
             itemCount: listVar.listVariable.length,
             itemBuilder: (context, index) {

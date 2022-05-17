@@ -22,6 +22,11 @@ class _SosDukVariableScreenState extends State<SosDukVariableScreen> {
       body: FutureBuilder(
         future: listVar.getAllVariable(subId),
         builder: (context, snapshot) {
+          if (snapshot.connectionState != ConnectionState.done &&
+              !snapshot.hasData) {
+            return const Center(child: CircularProgressIndicator());
+          }
+
           return ListView.builder(
             itemCount: listVar.listVariable.length,
             itemBuilder: (context, index) {

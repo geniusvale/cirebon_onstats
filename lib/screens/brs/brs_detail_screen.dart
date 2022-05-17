@@ -2,6 +2,7 @@ import 'package:cirebon_onstats/model/brs/brs_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
+import 'package:cirebon_onstats/api/download.dart';
 
 class BRSDetailScreen extends StatefulWidget {
   const BRSDetailScreen({Key? key}) : super(key: key);
@@ -55,7 +56,9 @@ class _BRSDetailScreenState extends State<BRSDetailScreen> {
                   ),
                 ),
                 TextButton.icon(
-                    onPressed: () {},
+                    onPressed: () => openFile(
+                        url: brsData.brsDetail.pdf!.toString(),
+                        fileName: '${brsData.brsDetail.title}.pdf'),
                     icon: const Icon(Icons.download, color: Colors.white),
                     label: const Text('Unduh',
                         style: TextStyle(color: Colors.white))),

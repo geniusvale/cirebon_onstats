@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
 
+import '../../api/download.dart';
+
 class PublikasiDetailScreen extends StatefulWidget {
   const PublikasiDetailScreen({Key? key}) : super(key: key);
 
@@ -78,13 +80,9 @@ class _PublikasiDetailScreenState extends State<PublikasiDetailScreen> {
                             style: const TextStyle(color: Colors.white),
                           ),
                           IconButton(
-                            onPressed: () async {
-                              // var dlDir = await getExternalStorageDirectory();
-                              // String fullPath =
-                              //     dlDir!.path + '${pubData.pubDetail.pdf}';
-                              // Dio().download(
-                              //     '${pubData.pubDetail.pdf}', fullPath);
-                            },
+                            onPressed: () => openFile(
+                                url: pubData.pubDetail.pdf!.toString(),
+                                fileName: '${pubData.pubDetail.title}.pdf'),
                             icon: const Icon(
                               Icons.download,
                               color: Colors.white,

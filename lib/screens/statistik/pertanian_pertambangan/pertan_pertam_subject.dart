@@ -6,7 +6,8 @@ class PertanPertamSubjectScreen extends StatefulWidget {
   const PertanPertamSubjectScreen({Key? key}) : super(key: key);
 
   @override
-  State<PertanPertamSubjectScreen> createState() => _PertanPertamSubjectScreenState();
+  State<PertanPertamSubjectScreen> createState() =>
+      _PertanPertamSubjectScreenState();
 }
 
 class _PertanPertamSubjectScreenState extends State<PertanPertamSubjectScreen> {
@@ -20,12 +21,18 @@ class _PertanPertamSubjectScreenState extends State<PertanPertamSubjectScreen> {
       body: FutureBuilder(
         future: listSubject.getAllSubject(3),
         builder: (context, snapshot) {
+          if (snapshot.connectionState != ConnectionState.done &&
+              !snapshot.hasData) {
+            return const Center(child: CircularProgressIndicator());
+          }
+
           return ListView.builder(
             itemCount: listSubject.subject.length,
             itemBuilder: (context, index) {
               return ListTile(
                 textColor: Colors.white,
-                onTap: () => Navigator.pushNamed(context, '/pertanpertamVariable',
+                onTap: () => Navigator.pushNamed(
+                    context, '/pertanpertamVariable',
                     arguments: listSubject.subject[index].sub_id),
                 title: Text(listSubject.subject[index].title),
               );

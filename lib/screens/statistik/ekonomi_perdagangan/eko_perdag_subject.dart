@@ -20,6 +20,11 @@ class _EkoPerdagSubjectScreenState extends State<EkoPerdagSubjectScreen> {
       body: FutureBuilder(
         future: listSubject.getAllSubject(2),
         builder: (context, snapshot) {
+          if (snapshot.connectionState != ConnectionState.done &&
+              !snapshot.hasData) {
+            return const Center(child: CircularProgressIndicator());
+          }
+
           return ListView.builder(
             itemCount: listSubject.subject.length,
             itemBuilder: (context, index) {
