@@ -1,6 +1,3 @@
-import 'dart:convert';
-
-import 'package:cirebon_onstats/model/statistik/statistik_viewmodel.dart';
 import 'package:cirebon_onstats/widgets/carousel_hero.dart';
 import 'package:flutter/material.dart';
 import '../widgets/widgets.dart';
@@ -20,16 +17,6 @@ class _BerandaState extends State<Beranda> {
       drawer: const DrawerKu(),
       appBar: AppBar(
         centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () async {
-              var bro = await StatistikViewModel().getStatsDataJson(104);
-              var teks = await jsonDecode(bro);
-              print(bro);
-            },
-            icon: const Icon(Icons.refresh),
-          )
-        ],
         title: SizedBox(
           width: 130,
           height: 36,

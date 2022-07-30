@@ -7,10 +7,12 @@ class PertanPertamVariableScreen extends StatefulWidget {
   const PertanPertamVariableScreen({Key? key}) : super(key: key);
 
   @override
-  State<PertanPertamVariableScreen> createState() => _PertanPertamVariableScreenState();
+  State<PertanPertamVariableScreen> createState() =>
+      _PertanPertamVariableScreenState();
 }
 
-class _PertanPertamVariableScreenState extends State<PertanPertamVariableScreen> {
+class _PertanPertamVariableScreenState
+    extends State<PertanPertamVariableScreen> {
   @override
   Widget build(BuildContext context) {
     var listVar = Provider.of<StatistikViewModel>(context, listen: false);
@@ -22,6 +24,11 @@ class _PertanPertamVariableScreenState extends State<PertanPertamVariableScreen>
       body: FutureBuilder(
         future: listVar.getAllVariable(subId),
         builder: (context, snapshot) {
+          if (snapshot.connectionState != ConnectionState.done &&
+              !snapshot.hasData) {
+            return const Center(child: CircularProgressIndicator());
+          }
+
           return ListView.builder(
             itemCount: listVar.listVariable.length,
             itemBuilder: (context, index) {

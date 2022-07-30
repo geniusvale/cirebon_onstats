@@ -21,7 +21,37 @@ class _InfografisScreenState extends State<InfografisScreen> {
       body: FutureBuilder(
         future: infografisData.getAllInfografis(),
         builder: (context, snapshot) {
-          return Container();
+          if (snapshot.hasData) {
+            return GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2),
+              itemCount: 6,
+              itemBuilder: (context, index) => Card(
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      SizedBox(
+                        width: 120,
+                        height: 120,
+                        child:
+                            Image.network(infografisData.infografis[index].img),
+                      ),
+                      Text(infografisData.infografis[index].title)
+                      // const Text('Title'),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          } else {
+            return const Center(
+              child: Text(
+                'Data Tidak Tersedia',
+                style: TextStyle(color: Colors.white),
+              ),
+            );
+          }
         },
       ),
     );

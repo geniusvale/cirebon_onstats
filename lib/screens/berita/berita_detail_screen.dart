@@ -32,21 +32,32 @@ class _BeritaDetailScreenState extends State<BeritaDetailScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image.network(
-                  '${beritaData.beritaDetail.picture}',
-                  width: MediaQuery.of(context).size.width,
-                  fit: BoxFit.contain,
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: beritaData.beritaDetail.picture != snapshot.hasError
+                      ? Image.network(
+                          '${beritaData.beritaDetail.picture}',
+                          width: MediaQuery.of(context).size.width,
+                          fit: BoxFit.contain,
+                        )
+                      : const SizedBox(),
                 ),
-                Text(
-                  beritaData.beritaDetail.title,
-                  style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 24,
-                      color: Colors.white),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    beritaData.beritaDetail.title,
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 24,
+                        color: Colors.white),
+                  ),
                 ),
-                Text(
-                  'Tanggal Rilis : ${beritaData.beritaDetail.rl_date}',
-                  style: const TextStyle(color: Colors.white),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'Tanggal Rilis : ${beritaData.beritaDetail.rl_date}',
+                    style: const TextStyle(color: Colors.white),
+                  ),
                 ),
                 const SizedBox(height: 8),
                 Html(
@@ -65,6 +76,7 @@ class _BeritaDetailScreenState extends State<BeritaDetailScreen> {
                   data: beritaData.beritaDetail.news,
                   style: {'body': Style(color: Colors.white)},
                 ),
+                
               ],
             ),
           );

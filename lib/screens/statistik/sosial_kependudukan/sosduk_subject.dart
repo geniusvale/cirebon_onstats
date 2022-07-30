@@ -20,6 +20,11 @@ class _SosDukSubjectScreenState extends State<SosDukSubjectScreen> {
       body: FutureBuilder(
         future: listSubject.getAllSubject(1),
         builder: (context, snapshot) {
+          if (snapshot.connectionState != ConnectionState.done &&
+              !snapshot.hasData) {
+            return const Center(child: CircularProgressIndicator());
+          }
+
           return ListView.builder(
             itemCount: listSubject.subject.length,
             itemBuilder: (context, index) {

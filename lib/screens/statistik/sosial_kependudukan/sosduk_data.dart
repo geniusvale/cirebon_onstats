@@ -24,19 +24,6 @@ class _SosDukDataScreenState extends State<SosDukDataScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(''),
-        actions: [
-          IconButton(
-            onPressed: () async {
-              var isi = data.statsData.datacontent.keys.toList();
-              print(isi);
-              for (var item in data.statsData.vervar!) {
-                print(Text(item.val.toString()));
-              }
-              print(isi);
-            },
-            icon: const Icon(Icons.refresh),
-          )
-        ],
       ),
       body: FutureBuilder(
         future: data.getStatsData(varId),
