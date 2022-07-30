@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
+import 'package:simple_html_css/simple_html_css.dart';
 
 import '../../../model/berita/berita_viewmodel.dart';
 
@@ -51,7 +52,19 @@ class _BeritaDetailScreenState extends State<BeritaDetailScreen> {
                 Html(
                   data: beritaData.beritaDetail.news,
                   style: {'body': Style(color: Colors.white)},
-                )
+                ),
+                Container(
+                  padding: const EdgeInsets.all(8.0),
+                  child: HTML.toRichText(
+                    context,
+                    beritaData.beritaDetail.news,
+                    defaultTextStyle: const TextStyle(color: Colors.white),
+                  ),
+                ),
+                Html(
+                  data: beritaData.beritaDetail.news,
+                  style: {'body': Style(color: Colors.white)},
+                ),
               ],
             ),
           );
