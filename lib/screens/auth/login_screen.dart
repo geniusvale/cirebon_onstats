@@ -8,7 +8,6 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController email = TextEditingController();
-
   final TextEditingController password = TextEditingController();
 
   @override
@@ -25,8 +24,12 @@ class _LoginScreenState extends State<LoginScreen> {
         email: email.text.trim(),
         password: password.text.trim(),
       );
+      Navigator.pop(context);
+      setState(() {});
     } on FirebaseAuthException catch (e) {
-      print(e);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(e.message.toString())),
+      );
     }
   }
 

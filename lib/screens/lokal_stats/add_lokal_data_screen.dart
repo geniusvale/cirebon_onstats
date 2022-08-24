@@ -1,4 +1,3 @@
-import 'package:cirebon_onstats/widgets/widgets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -18,17 +17,29 @@ class _AddLokalDataScreenState extends State<AddLokalDataScreen> {
       body: StreamBuilder<User?>(
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
-          } else if (snapshot.hasError) {
-            return const Center(
-                child: Text('Terjadi Kesalahan',
-                    style: TextStyle(color: Colors.white)));
-          } else if (snapshot.hasData) {
-            return const AddStatsWidget();
+          if (snapshot.hasData) {
+            return SnackBar(
+              content: Text(
+                snapshot.data!.email.toString(),
+              ),
+            );
           } else {
             return LoginScreen();
           }
+          // if (snapshot.connectionState == ConnectionState.waiting) {
+          //   return const Center(child: CircularProgressIndicator());
+          // } else if (snapshot.hasError) {
+          //   return const Center(
+          //     child: Text(
+          //       'Terjadi Kesalahan',
+          //       style: TextStyle(color: Colors.white),
+          //     ),
+          //   );
+          // } else if (snapshot.hasData) {
+          //   return const AddStatsWidget();
+          // } else {
+          //   return LoginScreen();
+          // }
         },
       ),
     );

@@ -35,6 +35,11 @@ class _EkoPerdagDataScreenState extends State<EkoPerdagDataScreen> {
 
           var datacontentValue = data.statsData.datacontent.values.toList();
           var datacontentKey = data.statsData.datacontent.keys.toList();
+          var abc = data.statsData.datacontent.entries.toList();
+          var key = data.statsData.datacontent.forEach((key, value) {
+            print('$key : $value');
+          });
+          // print(key);
 
           return ListView(
             padding: const EdgeInsets.all(8.0),
@@ -68,338 +73,190 @@ class _EkoPerdagDataScreenState extends State<EkoPerdagDataScreen> {
                       'Dari Datacontent, beberapa digit awal (dari kiri ke kanan), menunjukkan label dari VerVar (Vertical Variable), dilanjutkan dengan variable, val dari turvar, val dari Tahun, lalu val dari TurTahun.\n\n[valOfVerVar]+[variable]+[valOfTurVar]+[valOfTahun]+[valOfTurTahun] = Nilai of DataContent + Unit.\n\nMaka didapatkan Nilainya dari Nilai of Datacontent + Unit.',
                       style: txtDefault),
                   const SizedBox(height: 24),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Column(
-                        children: [
-                          const Text('Val of Datacontent', style: headerStyle),
-                          Container(
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.white),
-                              borderRadius: const BorderRadius.all(
-                                Radius.circular(5),
-                              ),
-                            ),
-                            width: 130,
-                            height: 130,
-                            child: ListView.separated(
-                              separatorBuilder: (context, index) =>
-                                  const Divider(
-                                      thickness: 1, color: Colors.white),
-                              itemCount: datacontentKey.length,
-                              itemBuilder: (context, index) {
-                                return Center(
-                                  child: Text(
-                                    datacontentKey[index].toString(),
-                                    style: txtDefault,
-                                  ),
-                                );
-                              },
+                  //DataContent
+                  Center(
+                    child: DataTable(
+                      headingTextStyle: headerStyle,
+                      dataTextStyle: txtDefault,
+                      showBottomBorder: true,
+                      border: TableBorder.all(color: Colors.white),
+                      columns: const [
+                        DataColumn(label: Text('Val of Datacontent')),
+                        DataColumn(
+                          label: Expanded(
+                            child: Text(
+                              'Nilai of \nDatacontent',
+                              maxLines: 2,
                             ),
                           ),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          const Text('Nilai of Datacontent',
-                              style: headerStyle),
-                          Container(
-                            padding: const EdgeInsets.only(top: 8, bottom: 8),
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.white),
-                              borderRadius: const BorderRadius.all(
-                                Radius.circular(5),
+                        ),
+                      ],
+                      rows: [
+                        for (var i = 0; i < datacontentKey.length; i++)
+                          DataRow(
+                            cells: [
+                              DataCell(
+                                Text(datacontentKey[i].toString()),
                               ),
-                            ),
-                            width: 130,
-                            height: 130,
-                            child: ListView.separated(
-                              separatorBuilder: (context, index) =>
-                                  const Divider(
-                                      thickness: 1, color: Colors.white),
-                              itemCount: datacontentValue.length,
-                              itemBuilder: (context, index) {
-                                return Center(
-                                  child: Text(
-                                    datacontentValue[index].toString(),
-                                    style: txtDefault,
-                                  ),
-                                );
-                              },
-                            ),
+                              DataCell(
+                                Text(datacontentValue[i].toString() +
+                                    ' ' +
+                                    '${data.statsData.dataVar[0].unit}'),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                  const SizedBox(height: 24),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Column(
-                        children: [
-                          const Text('Val of VerVar', style: headerStyle),
-                          Container(
-                            padding: const EdgeInsets.only(top: 8, bottom: 8),
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.white),
-                              borderRadius: const BorderRadius.all(
-                                Radius.circular(5),
-                              ),
-                            ),
-                            width: 130,
-                            height: 130,
-                            child: ListView.separated(
-                              separatorBuilder: (context, index) =>
-                                  const Divider(
-                                      thickness: 1, color: Colors.white),
-                              itemCount: data.statsData.vervar!.length,
-                              itemBuilder: (context, index) {
-                                return Center(
-                                  child: Text(
-                                    data.statsData.vervar![index].val
-                                        .toString(),
-                                    style: txtDefault,
-                                  ),
-                                );
-                              },
-                            ),
-                          ),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          const Text('Label of VerVar', style: headerStyle),
-                          Container(
-                            padding: const EdgeInsets.only(top: 8, bottom: 8),
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.white),
-                              borderRadius: const BorderRadius.all(
-                                Radius.circular(5),
-                              ),
-                            ),
-                            width: 130,
-                            height: 130,
-                            child: ListView.separated(
-                              separatorBuilder: (context, index) =>
-                                  const Divider(
-                                      thickness: 1, color: Colors.white),
-                              itemCount: data.statsData.vervar!.length,
-                              itemBuilder: (context, index) {
-                                return Center(
-                                  child: Text(
-                                    data.statsData.vervar![index].label!,
-                                    style: txtDefault,
-                                  ),
-                                );
-                              },
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
+                  const SizedBox(
+                    height: 24,
                   ),
-                  const SizedBox(height: 24),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Column(
-                        children: [
-                          const Text('Val of Tahun', style: headerStyle),
-                          Container(
-                            padding: const EdgeInsets.only(top: 8, bottom: 8),
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.white),
-                              borderRadius: const BorderRadius.all(
-                                Radius.circular(5),
-                              ),
-                            ),
-                            width: 130,
-                            height: 130,
-                            child: ListView.separated(
-                              separatorBuilder: (context, index) =>
-                                  const Divider(
-                                      thickness: 1, color: Colors.white),
-                              itemCount: data.statsData.tahun!.length,
-                              itemBuilder: (context, index) {
-                                return Center(
-                                  child: Text(
-                                    data.statsData.tahun![index].val.toString(),
-                                    style: txtDefault,
-                                  ),
-                                );
-                              },
+                  //VERVAR
+                  Center(
+                    child: DataTable(
+                      headingTextStyle: headerStyle,
+                      dataTextStyle: txtDefault,
+                      showBottomBorder: true,
+                      border: TableBorder.all(color: Colors.white),
+                      columns: [
+                        DataColumn(label: Text(data.statsData.labelvervar)),
+                        const DataColumn(
+                          label: Expanded(
+                            child: Text(
+                              'Val of \nVerVar',
+                              maxLines: 2,
                             ),
                           ),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          const Text('Tahun', style: headerStyle),
-                          Container(
-                            padding: const EdgeInsets.only(top: 8, bottom: 8),
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.white),
-                              borderRadius: const BorderRadius.all(
-                                Radius.circular(5),
+                        ),
+                      ],
+                      rows: [
+                        for (var i = 0; i < data.statsData.vervar!.length; i++)
+                          DataRow(
+                            cells: [
+                              DataCell(
+                                Text(
+                                    data.statsData.vervar![i].label.toString()),
                               ),
-                            ),
-                            width: 130,
-                            height: 130,
-                            child: ListView.separated(
-                              separatorBuilder: (context, index) =>
-                                  const Divider(
-                                      thickness: 1, color: Colors.white),
-                              itemCount: data.statsData.tahun!.length,
-                              itemBuilder: (context, index) {
-                                return Center(
-                                  child: Text(
-                                    data.statsData.tahun![index].label!,
-                                    style: txtDefault,
-                                  ),
-                                );
-                              },
-                            ),
+                              DataCell(
+                                Text(data.statsData.vervar![i].val.toString()),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                  const SizedBox(height: 24),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Column(
-                        children: [
-                          const Text('Val of TurTahun', style: headerStyle),
-                          Container(
-                            padding: const EdgeInsets.only(top: 8, bottom: 8),
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.white),
-                              borderRadius: const BorderRadius.all(
-                                Radius.circular(5),
-                              ),
-                            ),
-                            width: 130,
-                            height: 130,
-                            child: ListView.separated(
-                              separatorBuilder: (context, index) =>
-                                  const Divider(
-                                      thickness: 1, color: Colors.white),
-                              itemCount: data.statsData.turtahun!.length,
-                              itemBuilder: (context, index) {
-                                return Center(
-                                  child: Text(
-                                    data.statsData.turtahun![index].val
-                                        .toString(),
-                                    style: txtDefault,
-                                  ),
-                                );
-                              },
-                            ),
-                          ),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          const Text('Label of TurTahun', style: headerStyle),
-                          Container(
-                            padding: const EdgeInsets.only(top: 8, bottom: 8),
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.white),
-                              borderRadius: const BorderRadius.all(
-                                Radius.circular(5),
-                              ),
-                            ),
-                            width: 130,
-                            height: 130,
-                            child: ListView.separated(
-                              separatorBuilder: (context, index) =>
-                                  const Divider(
-                                      thickness: 1, color: Colors.white),
-                              itemCount: data.statsData.turtahun!.length,
-                              itemBuilder: (context, index) {
-                                return Center(
-                                  child: Text(
-                                    data.statsData.turtahun![index].label!,
-                                    style: txtDefault,
-                                  ),
-                                );
-                              },
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
+                  const SizedBox(
+                    height: 24,
                   ),
-                  const SizedBox(height: 24),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Column(
-                        children: [
-                          const Text('Val of TurVar', style: headerStyle),
-                          Container(
-                            padding: const EdgeInsets.only(top: 8, bottom: 8),
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.white),
-                              borderRadius: const BorderRadius.all(
-                                Radius.circular(5),
-                              ),
-                            ),
-                            width: 130,
-                            height: 130,
-                            child: ListView.separated(
-                              separatorBuilder: (context, index) =>
-                                  const Divider(
-                                      thickness: 1, color: Colors.white),
-                              itemCount: data.statsData.turvar!.length,
-                              itemBuilder: (context, index) {
-                                return Center(
-                                  child: Text(
-                                    data.statsData.turvar![index].val
-                                        .toString(),
-                                    style: txtDefault,
-                                  ),
-                                );
-                              },
+                  //TAHUN
+                  Center(
+                    child: DataTable(
+                      headingTextStyle: headerStyle,
+                      dataTextStyle: txtDefault,
+                      showBottomBorder: true,
+                      border: TableBorder.all(color: Colors.white),
+                      columns: const [
+                        DataColumn(label: Text('Tahun')),
+                        DataColumn(
+                          label: Expanded(
+                            child: Text(
+                              'Val of \nTahun',
+                              maxLines: 2,
                             ),
                           ),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          const Text('Label of TurVar', style: headerStyle),
-                          Container(
-                            padding: const EdgeInsets.only(top: 8, bottom: 8),
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.white),
-                              borderRadius: const BorderRadius.all(
-                                Radius.circular(5),
+                        ),
+                      ],
+                      rows: [
+                        for (var i = 0; i < data.statsData.tahun!.length; i++)
+                          DataRow(
+                            cells: [
+                              DataCell(
+                                Text(data.statsData.tahun![i].label.toString()),
                               ),
-                            ),
-                            width: 130,
-                            height: 130,
-                            child: ListView.separated(
-                              separatorBuilder: (context, index) =>
-                                  const Divider(
-                                      thickness: 1, color: Colors.white),
-                              itemCount: data.statsData.turvar!.length,
-                              itemBuilder: (context, index) {
-                                return Center(
-                                  child: Text(
-                                    data.statsData.turvar![index].label!,
-                                    style: txtDefault,
-                                    textAlign: TextAlign.center,
-                                  ),
-                                );
-                              },
+                              DataCell(
+                                Text(data.statsData.tahun![i].val.toString()),
+                              ),
+                            ],
+                          ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 24,
+                  ),
+                  //TurTAHUN
+                  Center(
+                    child: DataTable(
+                      headingTextStyle: headerStyle,
+                      dataTextStyle: txtDefault,
+                      showBottomBorder: true,
+                      border: TableBorder.all(color: Colors.white),
+                      columns: const [
+                        DataColumn(label: Text('TurTahun')),
+                        DataColumn(
+                          label: Expanded(
+                            child: Text(
+                              'Val of \nTurTahun',
+                              maxLines: 2,
                             ),
                           ),
-                        ],
-                      ),
-                    ],
+                        ),
+                      ],
+                      rows: [
+                        for (var i = 0;
+                            i < data.statsData.turtahun!.length;
+                            i++)
+                          DataRow(
+                            cells: [
+                              DataCell(
+                                Text(data.statsData.turtahun![i].label
+                                    .toString()),
+                              ),
+                              DataCell(
+                                Text(
+                                    data.statsData.turtahun![i].val.toString()),
+                              ),
+                            ],
+                          ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 24,
+                  ),
+                  //TurVAR
+                  Center(
+                    child: DataTable(
+                      headingTextStyle: headerStyle,
+                      dataTextStyle: txtDefault,
+                      showBottomBorder: true,
+                      border: TableBorder.all(color: Colors.white),
+                      columns: const [
+                        DataColumn(label: Text('TurVar')),
+                        DataColumn(
+                          label: Expanded(
+                            child: Text(
+                              'Val of \nTurVar',
+                              maxLines: 2,
+                            ),
+                          ),
+                        ),
+                      ],
+                      rows: [
+                        for (var i = 0; i < data.statsData.turvar!.length; i++)
+                          DataRow(
+                            cells: [
+                              DataCell(
+                                Text(
+                                    data.statsData.turvar![i].label.toString()),
+                              ),
+                              DataCell(
+                                Text(data.statsData.turvar![i].val.toString()),
+                              ),
+                            ],
+                          ),
+                      ],
+                    ),
                   ),
                 ],
               ),

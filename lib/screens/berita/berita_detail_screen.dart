@@ -71,7 +71,12 @@ class _BeritaDetailScreenState extends State<BeritaDetailScreen> {
                     beritaData.beritaDetail.news,
                     defaultTextStyle: const TextStyle(color: Colors.white),
                   ),
-                )
+                ),
+                Html(
+                  data: beritaData.beritaDetail.news,
+                  style: {'body': Style(color: Colors.white)},
+                ),
+                
               ],
             ),
           );
