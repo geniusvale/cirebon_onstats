@@ -53,6 +53,8 @@ class _LokalStatsScreenState extends State<LokalStatsScreen> {
       ),
       floatingActionButton: user != null
           ? SpeedDial(
+              overlayOpacity: 0.2,
+              overlayColor: Colors.black,
               animatedIcon: AnimatedIcons.menu_close,
               spaceBetweenChildren: 8,
               children: [

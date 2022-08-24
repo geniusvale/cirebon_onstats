@@ -113,6 +113,7 @@ class DrawerKu extends StatelessWidget {
               children: const [
                 Text(
                   'Badan Pusat Statistik Kota Cirebon\n',
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
                   ),
@@ -126,12 +127,14 @@ class DrawerKu extends StatelessWidget {
                 ),
                 Text(
                   'E-Mail: bps3274@bps.go.id',
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
                   ),
                 ),
                 Text(
                   'Telp: +62 231 485524, Fax: +62 231 484403\n',
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
                   ),

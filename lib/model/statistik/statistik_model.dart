@@ -12,14 +12,15 @@ class Data {
   List<TurTahun>? turtahun;
   Map datacontent;
 
-  Data(
-      {required this.dataVar,
-      this.turvar,
-      required this.labelvervar,
-      this.vervar,
-      this.tahun,
-      this.turtahun,
-      required this.datacontent});
+  Data({
+    required this.dataVar,
+    this.turvar,
+    required this.labelvervar,
+    this.vervar,
+    this.tahun,
+    this.turtahun,
+    required this.datacontent,
+  });
 
   factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
 
@@ -35,13 +36,14 @@ class TurTahun {
   int? group_turth_id;
   String? name_group_turth;
 
-  TurTahun(
-      {this.turth_id,
-      this.val,
-      this.label,
-      this.turth,
-      this.group_turth_id,
-      this.name_group_turth});
+  TurTahun({
+    this.turth_id,
+    this.val,
+    this.label,
+    this.turth,
+    this.group_turth_id,
+    this.name_group_turth,
+  });
 
   factory TurTahun.fromJson(Map<String, dynamic> json) =>
       _$TurTahunFromJson(json);
@@ -58,13 +60,14 @@ class TurVar {
   int? group_turvar_id;
   String? name_group_turvar;
 
-  TurVar(
-      {this.turvar_id,
-      this.val,
-      this.label,
-      this.turvar,
-      this.group_turvar_id,
-      this.name_group_turvar});
+  TurVar({
+    this.turvar_id,
+    this.val,
+    this.label,
+    this.turvar,
+    this.group_turvar_id,
+    this.name_group_turvar,
+  });
 
   factory TurVar.fromJson(Map<String, dynamic> json) => _$TurVarFromJson(json);
 
@@ -113,20 +116,21 @@ class Var {
   int? graph_id;
   String? graph_name;
 
-  Var(
-      {this.val,
-      this.label,
-      this.subj,
-      this.var_id,
-      this.title,
-      this.sub_id,
-      this.sub_name,
-      this.def,
-      this.note,
-      this.vertical,
-      this.unit,
-      this.graph_id,
-      this.graph_name});
+  Var({
+    this.val,
+    this.label,
+    this.subj,
+    this.var_id,
+    this.title,
+    this.sub_id,
+    this.sub_name,
+    this.def,
+    this.note,
+    this.vertical,
+    this.unit,
+    this.graph_id,
+    this.graph_name,
+  });
 
   factory Var.fromJson(Map<String, dynamic> json) => _$VarFromJson(json);
 
@@ -143,14 +147,15 @@ class VerVar {
   int? val;
   String? label;
 
-  VerVar(
-      {this.kode_ver_id,
-      this.vervar,
-      this.item_ver_id,
-      this.group_ver_id,
-      this.name_group_ver_id,
-      this.val,
-      this.label});
+  VerVar({
+    this.kode_ver_id,
+    this.vervar,
+    this.item_ver_id,
+    this.group_ver_id,
+    this.name_group_ver_id,
+    this.val,
+    this.label,
+  });
 
   factory VerVar.fromJson(Map<String, dynamic> json) => _$VerVarFromJson(json);
 
@@ -165,12 +170,13 @@ class Subject {
   String? subcat;
   var ntabel;
 
-  Subject(
-      {required this.sub_id,
-      required this.title,
-      this.subcat_id,
-      this.subcat,
-      this.ntabel});
+  Subject({
+    required this.sub_id,
+    required this.title,
+    this.subcat_id,
+    this.subcat,
+    this.ntabel,
+  });
 
   factory Subject.fromJson(Map<String, dynamic> json) =>
       _$SubjectFromJson(json);
