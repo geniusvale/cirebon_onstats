@@ -1,16 +1,22 @@
 # cirebon_onstats
 
-A new Flutter project.
+Cirebon OnStats is made with Flutter and Provider to show data from WebAPI BPS customized to fetch Kota Cirebon statistics data.
 
-## Getting Started
+## Features
+- See anything like in websites but in mobile apps such as Statistik, Berita, BRS, Publikasi & Infografis.
+- Download PDF provided in Publikasi.
+- Look local data in Data Statistik Lokal.
+- Input data in data statistik lokal for Admin.
 
-This project is a starting point for a Flutter application.
+## Technologies
 
-A few resources to get you started if this is your first Flutter project:
+- Flutter
+- Provider
+- Firebase Cloud Firestore
+- Dio
+- Web API BPS - [Docs](https://webapi.bps.go.id/documentation/)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Screenshots
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Homepage](./assets/screenshots/Picture1.jpg)![Homepage](./assets/screenshots/Picture2.jpg)![Homepage](./assets/screenshots/Picture3.jpg)![Homepage](./assets/screenshots/Picture4.jpg)
+
